@@ -11,7 +11,10 @@ const config = {
   prefix: '',
   theme: {
     container: {
-      padding: '2rem',
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+      },
       screens: {
         '2xl': '1500px',
       },
