@@ -1,9 +1,11 @@
 import { Button } from '@/components/ui/button';
 
-export default function HomePage() {
+const Homepage = () => {
   return (
     <div>
       <Button>We are live and slaying live</Button>
     </div>
   );
-}
+};
+
+export default Homepage;
