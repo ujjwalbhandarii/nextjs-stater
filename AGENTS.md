@@ -25,10 +25,11 @@ Before writing or editing code, execute the following steps:
    - BEFORE modifying an existing feature, AI agents MUST read its `src/feature/<feature-name>/README.md` file for fast contextual searchability.
    - When creating a NEW feature module, AI agents MUST create a `README.md` inside `src/feature/<feature-name>/README.md` documenting its components, hooks, services, and state flow.
 
-4. **Verify File Placement**:
+4. **Verify File & Asset Placement**:
    - **Feature Logic**: Place all domain components, hooks, services, and types in `src/feature/<feature-name>/`.
    - **App Router Pages**: Keep `src/app/<route>/page.tsx` as thin wrappers that only render the main feature container `src/feature/<feature-name>/index.tsx`.
    - **Atomic UI Primitives**: Place reusable UI blocks in `src/components/ui/` using `cva`, `cn()`, and `@radix-ui/react-slot` (`asChild`).
+   - **Static Assets Mandate**: Place image and media assets in clean subdirectories under `public/` (e.g. `public/images/`, `public/icons/`, `public/fonts/`). NEVER place loose image files at the root of `public/`.
 
 5. **Hook-Based Separation of Concerns (MANDATORY)**:
    - NEVER place stateful logic, API calls, side-effects (`useEffect`), or heavy event handlers inside presentational JSX components.

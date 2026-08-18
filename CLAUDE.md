@@ -22,12 +22,10 @@ All commands MUST be executed using **Bun**. Never run `npm`, `yarn`, or `pnpm`.
 ## 🏗️ Architectural Rules & Directory Placement
 
 ### 1. Route Layer (`src/app/`)
-
 - `src/app/` is strictly reserved for Next.js App Router route definitions (e.g., `layout.tsx`, `page.tsx`, `providers.tsx`).
 - **Rule**: Page files inside `src/app/` MUST remain thin wrappers. They must NOT contain inline UI markups or complex state. They must import and render the entry point component from `src/feature/<feature-name>/index.tsx`.
 
 ### 2. Feature Layer (`src/feature/<feature-name>/`)
-
 - All business domain logic, view containers, presentational sub-components, and custom hooks MUST live inside `src/feature/<feature-name>/`.
 - **Feature README Mandate**: EVERY feature folder MUST contain a `README.md` file documenting its domain overview, components, hooks, services, and state flow. Read this `README.md` first when modifying a feature, and create one when building a new feature.
 - Standard Folder Layout for a feature:
@@ -41,13 +39,15 @@ All commands MUST be executed using **Bun**. Never run `npm`, `yarn`, or `pnpm`.
   └── index.tsx            # Exported main feature component
   ```
 
-### 3. Service Unit Testing Mandate
+### 3. Static Asset Placement Mandate (`public/`)
+- ALL static images, banners, icons, and media files MUST be organized into dedicated subdirectories under `public/` (e.g. `public/images/`, `public/icons/`, `public/fonts/`).
+- NEVER place loose images directly at the root of `public/`.
 
+### 4. Service Unit Testing Mandate
 - ALL business services in `services/` MUST have a corresponding `<service-name>.test.ts` file.
 - Unit tests are run via `bun test` and verified during `bun run verify`.
 
-### 4. Writing Style Rule (No Em Dash)
-
+### 5. Writing Style Rule (No Em Dash)
 - **STRICT RULE**: NEVER use the em dash "—" symbol anywhere in code, markdown, documentation, or comments as it looks AI-generated. Use standard hyphens "-", colons ":", or clean punctuation instead.
 
 ---
@@ -94,8 +94,7 @@ const componentVariants = cva(
 );
 
 export interface ComponentProps
-  extends
-    React.HTMLAttributes<HTMLDivElement>,
+  extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof componentVariants> {
   asChild?: boolean;
 }
@@ -110,7 +109,7 @@ export function CustomComponent({
   const Comp = asChild ? Slot : 'div';
   return (
     <Comp
-      data-slot='custom-component'
+      data-slot="custom-component"
       className={cn(componentVariants({ variant, size, className }))}
       {...props}
     />
@@ -127,5 +126,6 @@ Before submitting code changes, AI assistants MUST ensure:
 1. **Path Aliases**: All imports use `@/components`, `@/feature`, `@/styles`, or `@/utils`. No relative parent paths like `../../..`.
 2. **Type Safety**: TypeScript `strict` mode is active. Explicitly type all component props, function parameters, and hook return values. `any` is forbidden.
 3. **Feature README**: Ensure `README.md` exists inside `src/feature/<feature-name>/`.
-4. **No Em Dash**: Verify no em dash "—" symbols are present.
-5. **Validation**: Execute `bun run verify` to guarantee zero compilation, formatting, lint, or test errors.
+4. **Clean Asset Placement**: Ensure all images are placed in `public/images/` or subdirectories.
+5. **No Em Dash**: Verify no em dash "—" symbols are present.
+6. **Validation**: Execute `bun run verify` to guarantee zero compilation, formatting, lint, or test errors.
