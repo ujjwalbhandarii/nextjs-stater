@@ -36,21 +36,25 @@ Before writing or editing code, execute the following steps:
    - ALWAYS extract business logic into custom hooks under `src/feature/<feature-name>/hooks/use-<feature-name>.ts`.
    - ALWAYS place domain & backend services under `src/feature/<feature-name>/services/<service-name>.ts`.
 
-6. **Service Unit Testing Mandate**:
+6. **Data Separation & Modular Component Decomposition Mandate (MANDATORY)**:
+   - ALWAYS separate static data, constants, mock arrays, and configuration schemas into dedicated data files under `src/feature/<feature-name>/constants/` or `src/feature/<feature-name>/types/`. NEVER inline heavy data arrays inside component files.
+   - ALWAYS break down complex UI sections into smaller, focused, single-responsibility sub-components (e.g. tree visualizer, inspector panel, item row) to maximize reusability, maintainability, and clean readability.
+
+7. **Service Unit Testing Mandate**:
    - ALL business and data services in `services/` MUST have accompanying unit test files (`<service-name>.test.ts`).
    - Unit tests are executed via `bun test` and verified before every push.
 
-7. **Design System & Styling**:
+8. **Design System & Styling**:
    - ALWAYS use Tailwind CSS v4 semantic tokens (`bg-background`, `text-foreground`, `bg-primary`, `border-border`).
    - NEVER hardcode HEX colors, RGB values, or arbitrary pixel values in component classes.
    - ALWAYS combine class names using `cn()` from `@/utils/cn`.
 
-8. **Strict Formatting & Writing Style Rule**:
+9. **Strict Formatting & Writing Style Rule**:
    - NEVER use the em dash "—" symbol anywhere in code, markdown, comments, or documentation as it looks AI-generated. Use standard hyphens "-", colons ":", or clean punctuation instead.
 
-9. **Post-Coding & Pre-Push Verification**:
-   - After completing edits and ALWAYS before pushing to GitHub, run `bun run verify` (which runs `typecheck`, `check`, `lint`, and `test`) to guarantee zero errors, clean formatting, and passing unit tests.
-   - A git pre-push hook (`.husky/pre-push`) is active to block pushes if `bun run verify` fails.
+10. **Post-Coding & Pre-Push Verification**:
+    - After completing edits and ALWAYS before pushing to GitHub, run `bun run verify` (which runs `typecheck`, `check`, `lint`, and `test`) to guarantee zero errors, clean formatting, and passing unit tests.
+    - A git pre-push hook (`.husky/pre-push`) is active to block pushes if `bun run verify` fails.
 
 ---
 

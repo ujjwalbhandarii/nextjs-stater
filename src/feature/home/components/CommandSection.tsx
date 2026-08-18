@@ -1,37 +1,10 @@
 import { Terminal, Copy, Check, Play } from 'lucide-react';
+import { COMMANDS_LIST } from '../constants/home.constants';
 
 interface CommandSectionProps {
   onCopy: (cmd: string) => void;
   copiedCommand: string | null;
 }
-
-const commandsList = [
-  {
-    label: 'Start Local Development',
-    cmd: 'bun dev',
-    desc: 'Launches local Next.js dev server with Turbopack on port 3000.',
-  },
-  {
-    label: 'Full Pre-Push Verification',
-    cmd: 'bun run verify',
-    desc: 'Runs TypeScript typecheck, Prettier check, ESLint, and Bun unit tests.',
-  },
-  {
-    label: 'Execute Service Unit Tests',
-    cmd: 'bun test',
-    desc: 'Fast native Bun test runner executing domain service unit tests.',
-  },
-  {
-    label: 'Build Standalone Production',
-    cmd: 'bun run build',
-    desc: 'Compiles Turbopack production bundle with Next.js standalone output.',
-  },
-  {
-    label: 'Build Minimal Docker Image',
-    cmd: 'bun run docker:build',
-    desc: 'Builds lightweight multi-stage Alpine Docker container.',
-  },
-];
 
 export function CommandSection({ onCopy, copiedCommand }: CommandSectionProps) {
   return (
@@ -50,7 +23,7 @@ export function CommandSection({ onCopy, copiedCommand }: CommandSectionProps) {
       </div>
 
       <div className='space-y-3 sm:space-y-3.5'>
-        {commandsList.map((item) => {
+        {COMMANDS_LIST.map((item) => {
           const isCopied = copiedCommand === item.cmd;
           return (
             <div

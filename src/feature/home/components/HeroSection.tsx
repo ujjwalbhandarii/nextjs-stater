@@ -1,31 +1,12 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import {
-  Terminal,
-  ArrowRight,
-  Zap,
-  Atom,
-  Palette,
-  Flame,
-  Code2,
-  Boxes,
-  Container,
-} from 'lucide-react';
+import { Terminal, ArrowRight } from 'lucide-react';
+import { TECH_BADGES } from '../constants/home.constants';
 
 interface HeroSectionProps {
   onCopy: (cmd: string) => void;
   copiedCommand: string | null;
 }
-
-const techBadges = [
-  { label: 'Next.js 16', icon: Zap },
-  { label: 'React 19', icon: Atom },
-  { label: 'Tailwind CSS v4', icon: Palette },
-  { label: 'Bun Runtime', icon: Flame },
-  { label: 'TypeScript 5', icon: Code2 },
-  { label: 'Radix UI', icon: Boxes },
-  { label: 'Docker Ready', icon: Container },
-];
 
 export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
   const quickStartCmd = 'bun run verify';
@@ -49,7 +30,7 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
 
       {/* Prominent Tech Stack Liquid Glass Pills */}
       <div className='flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 max-w-4xl mx-auto'>
-        {techBadges.map((badge) => {
+        {TECH_BADGES.map((badge) => {
           const Icon = badge.icon;
           return (
             <span

@@ -1,56 +1,4 @@
-import {
-  Layers,
-  Webhook,
-  CheckCircle2,
-  GitPullRequest,
-  Container,
-  FileCode2,
-} from 'lucide-react';
-
-const features = [
-  {
-    icon: Layers,
-    title: 'Feature-Based Architecture',
-    description:
-      'Domain code lives neatly encapsulated in src/feature/<feature-name>/ with clean modular boundary separation.',
-    tag: 'src/feature/',
-  },
-  {
-    icon: Webhook,
-    title: 'Hook-Based Logic Separation',
-    description:
-      'JSX views remain purely presentational. All state, API calls, and handlers reside in dedicated custom hooks.',
-    tag: 'hooks/use-feature.ts',
-  },
-  {
-    icon: CheckCircle2,
-    title: 'Service Unit Testing Mandate',
-    description:
-      'All business and data services in services/ require matching test files (<service>.test.ts) run via bun test.',
-    tag: 'services/*.test.ts',
-  },
-  {
-    icon: GitPullRequest,
-    title: 'Automated Git Pre-Push Hook',
-    description:
-      'Configured via Husky to auto-format, typecheck, lint, and test before pushing code to GitHub repositories.',
-    tag: '.husky/pre-push',
-  },
-  {
-    icon: Container,
-    title: 'Ultra-Optimized Docker Setup',
-    description:
-      'Next.js standalone output tracing with multi-stage Alpine Dockerfile for ultra-fast, minimal container deployments.',
-    tag: 'Dockerfile',
-  },
-  {
-    icon: FileCode2,
-    title: 'Feature README Indexing',
-    description:
-      'Every feature module contains a README.md to provide instant contextual searchability for AI agents and devs.',
-    tag: 'README.md',
-  },
-];
+import { FEATURES } from '../constants/home.constants';
 
 export function FeaturesSection() {
   return (
@@ -66,7 +14,7 @@ export function FeaturesSection() {
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6'>
-        {features.map((item) => {
+        {FEATURES.map((item) => {
           const Icon = item.icon;
           return (
             <div
