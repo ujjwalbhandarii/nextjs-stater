@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="public/vibe_ready_banner.png" alt="Vibe Ready Next.js Starter Pack Banner" width="100%" style="border-radius: 12px;" />
+  <img src="public/images/vibe_ready_banner.png" alt="Vibe Ready Next.js Starter Pack Banner" width="100%" style="border-radius: 12px;" />
 </p>
 
 An enterprise-grade, Vibe Code ready Next.js 16 starter template engineered for rapid startup development and AI-assisted pair programming. Features strict **Feature-Based Architecture**, **Feature README Indexing**, **Scalable Design Tokens**, **Component Architecture**, **Hook-Based State Management**, **Standardized API Routes**, and an automated **Git Pre-Push Hook**.
