@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import {
   Terminal,
-  ShieldCheck,
   ArrowRight,
   Zap,
   Atom,
@@ -117,16 +116,6 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
           className='w-full h-auto object-cover rounded-2xl opacity-95 transition-all duration-700 group-hover:opacity-100 group-hover:scale-101'
           priority
         />
-        <div className='absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-center justify-between gap-2 px-5 py-3 rounded-2xl liquid-glass-pill text-xs text-slate-200'>
-          <span className='flex items-center gap-2 font-medium'>
-            <span className='w-2 h-2 rounded-full bg-[#66b2b2] animate-pulse' />
-            <span>Vibe Ready Architecture & Ambient Coding Active</span>
-          </span>
-          <span className='text-[#b2d8d8] font-mono flex items-center gap-1.5 font-medium'>
-            <ShieldCheck className='w-4 h-4 text-[#008080]' />
-            <span>Husky Pre-Push & Bun Verified</span>
-          </span>
-        </div>
       </div>
     </section>
   );
