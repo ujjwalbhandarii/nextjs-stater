@@ -31,6 +31,7 @@ src/feature/<feature-name>/
 ```
 
 ### Thin App Router Shell (`src/app/`)
+
 Route files in `src/app/` must remain light wrappers. They import and render the top-level view from `src/feature/<feature-name>/index.tsx`.
 
 ```tsx
