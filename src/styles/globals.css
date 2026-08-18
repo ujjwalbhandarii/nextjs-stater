@@ -2,7 +2,7 @@
 @import 'tw-animate-css';
 
 /* 
-  Million-Dollar SaaS Design System with Liquid Glass Aesthetics:
+  Million-Dollar SaaS Design System with Obsidian Liquid Glass Aesthetics:
   - Font: Geist / Inter with precise tracking & crisp antialiasing
   - Primary Headlines: Pure Crisp White (#ffffff / #f8fafc)
   - Secondary Text: High-contrast Slate Silver (#cbd5e1 / #94a3b8)
@@ -39,7 +39,7 @@
 .dark {
   --background: #060909;
   --foreground: #f8fafc;
-  --card: rgba(0, 76, 76, 0.2);
+  --card: rgba(12, 18, 18, 0.65);
   --card-foreground: #f8fafc;
   --popover: #060909;
   --popover-foreground: #f8fafc;
@@ -47,13 +47,13 @@
   --primary-foreground: #ffffff;
   --secondary: #004c4c;
   --secondary-foreground: #cbd5e1;
-  --muted: rgba(0, 102, 102, 0.25);
+  --muted: rgba(0, 102, 102, 0.15);
   --muted-foreground: #94a3b8;
   --accent: #66b2b2;
   --accent-foreground: #060909;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: rgba(0, 102, 102, 0.35);
-  --input: rgba(0, 102, 102, 0.45);
+  --border: rgba(0, 102, 102, 0.3);
+  --input: rgba(0, 102, 102, 0.4);
   --ring: #008080;
 }
 
@@ -112,12 +112,12 @@
   background:
     radial-gradient(
       circle at 50% 5%,
-      rgba(0, 128, 128, 0.18) 0%,
+      rgba(0, 128, 128, 0.14) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 85% 55%,
-      rgba(0, 76, 76, 0.22) 0%,
+      rgba(0, 76, 76, 0.15) 0%,
       transparent 45%
     );
 }
@@ -128,46 +128,46 @@
   background-size: 128px 128px;
 }
 
-/* 🧪 Liquid Glass Container & Card Styling */
+/* 🧪 Neutral Obsidian Liquid Glass Container Styling */
 .liquid-glass-card {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(0, 102, 102, 0.18) 45%,
-    rgba(0, 76, 76, 0.28) 100%
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(12, 18, 18, 0.7) 45%,
+    rgba(6, 9, 9, 0.85) 100%
   );
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(28px) saturate(150%);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
+  border: 1px solid rgba(0, 102, 102, 0.3);
   box-shadow:
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25),
-    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.4),
-    0 12px 36px -10px rgba(0, 0, 0, 0.5);
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.5),
+    0 12px 36px -10px rgba(0, 0, 0, 0.6);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .liquid-glass-card:hover {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.14) 0%,
-    rgba(0, 128, 128, 0.25) 50%,
-    rgba(0, 76, 76, 0.38) 100%
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(16, 24, 24, 0.8) 50%,
+    rgba(8, 12, 12, 0.9) 100%
   );
-  border-color: rgba(102, 178, 178, 0.45);
+  border-color: rgba(102, 178, 178, 0.4);
   box-shadow:
-    inset 0 1px 2px 0 rgba(255, 255, 255, 0.4),
-    0 20px 48px -10px rgba(0, 128, 128, 0.25);
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.25),
+    0 20px 48px -10px rgba(0, 128, 128, 0.15);
   transform: translateY(-2px);
 }
 
 .liquid-glass-pill {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(0, 76, 76, 0.3) 100%
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(12, 18, 18, 0.75) 100%
   );
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 102, 102, 0.3);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.18);
 }
