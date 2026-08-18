@@ -1,8 +1,9 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import './typography.css';
 
 /* 
-  Million-Dollar SaaS Design System with Obsidian Liquid Glass Aesthetics:
+  Million-Dollar SaaS Design System with Obsidian Liquid Glass Aesthetics & Typography Tokens:
   - Font: Geist / Inter with precise tracking & crisp antialiasing
   - Primary Headlines: Pure Crisp White (#ffffff / #f8fafc)
   - Secondary Text: High-contrast Slate Silver (#cbd5e1 / #94a3b8)
