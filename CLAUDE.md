@@ -14,7 +14,7 @@ All commands MUST be executed using **Bun**. Never run `npm`, `yarn`, or `pnpm`.
 - **TypeScript Verification**: `bun run typecheck`
 - **Lint Check**: `bun run lint`
 - **Format Code**: `bun run format`
-- **Check Code Formatting**: `bun run check`
+- **Pre-Push Verification**: `bun run verify` (runs `typecheck`, `check`, and `lint`)
 
 ---
 

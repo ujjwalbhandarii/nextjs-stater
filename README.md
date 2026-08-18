@@ -1,4 +1,4 @@
-# Startup Ready Pack
+# Vibe Ready — Production Next.js Starter Pack
 
 <p align="left">
   <img src="https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" />
 </p>
 
-An enterprise-ready, production-grade Next.js 16 starter template engineered for rapid startup development. Features strict **Feature-Based Architecture**, **Scalable Design Tokens**, **Component Architecture**, **Hook-Based State Management**, and **Standardized API Routes**.
+An enterprise-grade, Vibe Code ready Next.js 16 starter template engineered for rapid startup development and AI-assisted pair programming. Features strict **Feature-Based Architecture**, **Scalable Design Tokens**, **Component Architecture**, **Hook-Based State Management**, **Standardized API Routes**, and an automated **Git Pre-Push Hook**.
 
 ---
 
@@ -25,7 +25,22 @@ bun run build    # Build production bundle
 bun run typecheck# Verify TypeScript types
 bun run check    # Verify Prettier code formatting
 bun run format   # Auto-format codebase
+bun run verify   # Run complete pre-push verification (typecheck + format + lint)
 ```
+
+---
+
+## 🛡️ Git Pre-Push Verification
+
+This template includes a built-in **Git Pre-Push Hook** (`.git/hooks/pre-push`).
+
+Before code is pushed to remote GitHub repositories, Git automatically runs `bun run verify` to check:
+
+1. **TypeScript Compilation** (`tsc --noEmit`)
+2. **Prettier Formatting** (`prettier --check .`)
+3. **ESLint Static Analysis** (`next lint`)
+
+> ⚠️ Pushes to GitHub will be blocked automatically if any type, formatting, or linting errors are detected.
 
 ---
 

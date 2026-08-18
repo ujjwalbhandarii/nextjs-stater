@@ -34,9 +34,9 @@ Before writing or editing code, execute the following steps:
    - NEVER hardcode HEX colors, RGB values, or arbitrary pixel values in component classes.
    - ALWAYS combine class names using `cn()` from `@/utils/cn`.
 
-6. **Post-Coding Verification**:
-   - After completing edits, run `bun run typecheck` to verify zero TypeScript errors.
-   - Run `bun run check` (or `bun run format`) to verify code formatting.
+6. **Post-Coding & Pre-Push Verification**:
+   - After completing edits and ALWAYS before pushing to GitHub, run `bun run verify` (which runs `typecheck`, `check`, and `lint`) to guarantee zero errors and clean formatting.
+   - A git pre-push hook (`.git/hooks/pre-push`) is active to block pushes if `bun run verify` fails.
 
 ---
 
@@ -48,4 +48,5 @@ bun run build    # Build production bundle
 bun run typecheck# Verify TypeScript types
 bun run check    # Verify Prettier code formatting
 bun run format   # Auto-format codebase
+bun run verify   # Run full pre-push verification (typecheck + check + lint)
 ```
