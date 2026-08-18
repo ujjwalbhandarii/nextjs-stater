@@ -1,0 +1,9 @@
+# Cursor AI Rules & Mandatory Pre-Coding Checklist
+
+- ALWAYS use Bun as the package manager (`bun dev`, `bun run build`, `bun run typecheck`, `bun run check`, `bun run format`). Never use npm/yarn.
+- Place domain feature code in `src/feature/<feature-name>/`.
+- Keep Next.js App Router files in `src/app/` as thin wrappers that render `src/feature/<feature-name>/index.tsx`.
+- Place atomic UI primitives in `src/components/ui/` using `cva`, `cn()`, and `@radix-ui/react-slot` (`asChild`).
+- Extract all stateful logic, API calls, and handlers to custom hooks in `src/feature/<feature-name>/hooks/`.
+- Use Tailwind CSS v4 semantic tokens (`bg-background`, `text-foreground`, `bg-primary`, `border-border`). Do NOT hardcode colors.
+- After code edits, verify with `bun run typecheck` and `bun run check`.

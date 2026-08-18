@@ -37,7 +37,7 @@ The architecture is broken into focused, modular documentation:
 - 🎨 **[Design System](docs/DESIGN_SYSTEM.md)** — OKLCH color tokens, dark mode, and Tailwind CSS v4 setup.
 - 🧩 **[Component System](docs/COMPONENT_SYSTEM.md)** — Atomic UI primitives (`src/components/ui/`) built with Radix UI & CVA.
 - 🪝 **[Hook-Based Logic Separation](docs/HOOKS_GUIDE.md)** — Clean separation of JSX views and stateful custom hooks.
-- 🤖 **[AI Engineering Directives (CLAUDE.md)](CLAUDE.md)** — Standards and conventions for AI assistants coding in this repo.
+- 🤖 **[AI Agent Pre-Coding Protocol (AGENTS.md)](AGENTS.md)** / **[CLAUDE.md](CLAUDE.md)** — Mandatory standards for AI assistants before writing code.
 
 ---
 

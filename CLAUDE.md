@@ -1,6 +1,7 @@
 # CLAUDE.md - AI Engineering Directives & Standards
 
-This document serves as the mandatory instruction set for AI coding assistants (Claude, Cursor, Copilot, Gemini, etc.) operating on this codebase. All AI-generated code, refactoring, and architectural decisions must strictly adhere to the rules outlined below.
+> **🛑 MANDATORY BEFORE CODING PROTOCOL (ALL AI AGENTS MUST FOLLOW)**
+> Before generating, editing, or refactoring code in this repository, you MUST read and follow the principles defined in [`AGENTS.md`](AGENTS.md) and the system docs in `docs/`.
 
 ---
 
