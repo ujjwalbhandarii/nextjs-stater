@@ -15,6 +15,7 @@ Before writing or editing code, execute the following steps:
 
 2. **Check System Architecture Docs**:
    - Read [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for feature module rules.
+   - Read [`docs/API_ROUTES.md`](docs/API_ROUTES.md) for API route controllers & backend service rules.
    - Read [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md) for OKLCH tokens & Tailwind CSS v4 styling rules.
    - Read [`docs/COMPONENT_SYSTEM.md`](docs/COMPONENT_SYSTEM.md) for UI primitive standards.
    - Read [`docs/HOOKS_GUIDE.md`](docs/HOOKS_GUIDE.md) for state & side-effect extraction.

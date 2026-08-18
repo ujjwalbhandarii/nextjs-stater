@@ -8,8 +8,9 @@ This project follows a **Feature-Based Architecture** where domain logic, views,
 
 ```
 src/
-├── app/                     # Next.js App Router (Thin routing shell)
-├── feature/                 # Domain-driven feature modules
+├── app/                     # Next.js App Router (Thin page routing & API shells)
+│   └── api/                 # API Route Controllers (see docs/API_ROUTES.md)
+├── feature/                 # Domain-driven feature modules (UI, Hooks, Services)
 ├── components/              # Design System primitives (Atomic UI)
 ├── styles/                  # Global CSS & Tailwind CSS v4 design tokens
 └── utils/                   # Shared utilities, constants, & global types
