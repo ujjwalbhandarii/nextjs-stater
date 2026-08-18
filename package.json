@@ -13,7 +13,9 @@
     "test": "bun test",
     "verify": "bun run typecheck && bun run check && bun run lint && bun test",
     "prepush": "bun run verify",
-    "prepare": "husky"
+    "prepare": "husky",
+    "docker:build": "docker build -t vibe-ready-nextjs .",
+    "docker:run": "docker run -p 3000:3000 vibe-ready-nextjs"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.3.3",

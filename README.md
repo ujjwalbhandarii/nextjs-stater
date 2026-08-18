@@ -31,6 +31,8 @@ bun run check    # Verify Prettier code formatting
 bun test         # Run service unit tests with Bun test runner
 bun run format   # Auto-format codebase
 bun run verify   # Run complete pre-push verification (typecheck + format + lint + test)
+bun run docker:build  # Build minimal standalone Docker container image
+bun run docker:run    # Run production Docker container on localhost:3000
 ```
 
 ---

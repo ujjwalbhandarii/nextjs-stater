@@ -1,0 +1,23 @@
+# Dependencies & build outputs
+node_modules
+.next
+out
+build
+
+# Version control & environment
+.git
+.gitignore
+.husky
+.vscode
+.idea
+
+# Environment & local configs
+.env*.local
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Documentation & Scratch
+docs
+brain
