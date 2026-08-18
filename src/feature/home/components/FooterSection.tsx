@@ -1,32 +1,23 @@
-import { Heart, Sparkles } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 export function FooterSection() {
   return (
-    <footer className='mt-16 sm:mt-24 py-8 sm:py-10 border-t border-[#006666]/40 bg-[#060909]/80 backdrop-blur-2xl'>
-      <div className='max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-300/90'>
-        <div className='flex flex-wrap items-center justify-center sm:justify-start gap-2'>
-          <Sparkles className='w-4 h-4 text-[#008080]' />
-          <span className='font-semibold text-white'>
-            Vibe Ready Starter Pack
-          </span>
-          <span className='hidden sm:inline'>&bull;</span>
-          <span className='text-slate-400 w-full sm:w-auto'>
-            Next.js 16 + Bun + Tailwind CSS v4
-          </span>
-        </div>
-
-        <div className='flex items-center gap-1.5 text-slate-400'>
+    <footer className='mt-16 sm:mt-24 py-12 border-t border-[#006666]/40 bg-[#060909]/90 backdrop-blur-2xl'>
+      <div className='max-w-4xl mx-auto px-4 flex flex-col items-center justify-center text-center gap-5'>
+        {/* Stack Item 1: Crafted with Heart Tagline */}
+        <div className='flex items-center justify-center gap-1.5 text-xs sm:text-sm text-slate-400'>
           <span>Crafted with</span>
           <Heart className='w-3.5 h-3.5 text-[#66b2b2] fill-[#66b2b2]' />
           <span>for rapid startup development</span>
         </div>
 
-        <div className='flex items-center gap-4'>
+        {/* Stack Item 2: GitHub Repository Link Button */}
+        <div>
           <a
             href='https://github.com/ujjwalbhandarii/nextjs-stater'
             target='_blank'
             rel='noopener noreferrer'
-            className='hover:text-white transition-colors flex items-center gap-2 font-medium text-slate-300'
+            className='inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-[#060909]/90 border border-[#006666]/50 hover:border-[#66b2b2] hover:text-white transition-all text-xs sm:text-sm font-medium text-slate-300 shadow-md hover:scale-102 cursor-pointer'
           >
             <svg
               className='w-4 h-4 fill-current text-[#66b2b2]'
