@@ -13,12 +13,14 @@ import {
   Atom,
   Flame,
   Code2,
+  Bot,
 } from 'lucide-react';
 import {
   ArchitectureNode,
   FeatureItem,
   CommandItem,
   TechBadge,
+  WhyItem,
 } from '../types/home.types';
 
 export const TECH_BADGES: TechBadge[] = [
@@ -29,6 +31,57 @@ export const TECH_BADGES: TechBadge[] = [
   { label: 'TypeScript 5', icon: Code2 },
   { label: 'Radix UI', icon: Boxes },
   { label: 'Docker Ready', icon: Container },
+];
+
+export const WHY_ITEMS: WhyItem[] = [
+  {
+    icon: Bot,
+    title: 'Zero AI Drift & Instant Indexing',
+    metric: '10x Faster AI Pair-Coding',
+    description:
+      'Engineered specifically for AI coding agents with AGENTS.md protocols and feature-level README.md files that ensure AI never hallucinates or breaks architecture.',
+    highlight: 'AGENTS.md Protocol',
+  },
+  {
+    icon: Flame,
+    title: 'Ultra-Fast Bun Runtime',
+    metric: '3x Faster Installs & Tests',
+    description:
+      'Lightning-fast package installation, native Bun test execution, and zero Node.js memory overhead for seamless developer experience.',
+    highlight: 'Native Bun Engine',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Automated Git Quality Guardrails',
+    metric: 'Zero Broken Pushes',
+    description:
+      'Built-in Husky pre-push hook runs typecheck, formatting, linting, and unit tests automatically before code hits remote repositories.',
+    highlight: 'Husky Pre-Push Gate',
+  },
+  {
+    icon: Layers,
+    title: 'Encapsulated Feature Domain Core',
+    metric: 'Infinite Scalability',
+    description:
+      'Clean domain boundaries under src/feature/<name>/ isolate views, hooks, services, and types to prevent spaghetti code as team size grows.',
+    highlight: 'Domain Isolation',
+  },
+  {
+    icon: Palette,
+    title: 'Obsidian Liquid Glass Design Tokens',
+    metric: 'Million-Dollar Aesthetic',
+    description:
+      'OKLCH color variables, dark glassmorphism, responsive ambient glows, and standardized typography CSS built for high-converting SaaS applications.',
+    highlight: 'Standardized Typography',
+  },
+  {
+    icon: Container,
+    title: 'Standalone Alpine Docker Tracing',
+    metric: '<100MB Production Image',
+    description:
+      'Next.js standalone build tracing with multi-stage Alpine Dockerfile ready for instant production deployment to Vercel, AWS, or Railway.',
+    highlight: 'Production Container',
+  },
 ];
 
 export const FEATURES: FeatureItem[] = [

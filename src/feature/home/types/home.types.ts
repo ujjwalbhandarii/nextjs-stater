@@ -33,3 +33,11 @@ export interface TechBadge {
   label: string;
   icon: LucideIcon;
 }
+
+export interface WhyItem {
+  icon: LucideIcon;
+  title: string;
+  metric: string;
+  description: string;
+  highlight: string;
+}

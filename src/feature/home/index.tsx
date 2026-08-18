@@ -2,6 +2,7 @@
 
 import { useHome } from './hooks/use-home';
 import { HeroSection } from './components/HeroSection';
+import { WhySection } from './components/WhySection';
 import { FeaturesSection } from './components/FeaturesSection';
 import { CommandSection } from './components/CommandSection';
 import { ArchitectureSection } from './components/ArchitectureSection';
@@ -25,6 +26,7 @@ export default function Homepage() {
           onCopy={handleCopyCommand}
           copiedCommand={copiedCommand}
         />
+        <WhySection />
         <FeaturesSection />
         <CommandSection
           onCopy={handleCopyCommand}
