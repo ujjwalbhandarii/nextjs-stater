@@ -1,4 +1,4 @@
-# 🤖 AGENTS.md - MANDATORY AI AGENT PRE-CODING PROTOCOL
+# 🤖 AGENTS.md: MANDATORY AI AGENT PRE-CODING PROTOCOL
 
 > **ATTENTION ALL AI AGENTS (Claude, Cursor, Copilot, Gemini, ChatGPT, Windsurf, Antigravity, etc.)**
 > You MUST read and follow this protocol BEFORE inspecting, generating, or modifying any code in this repository.
@@ -20,26 +20,34 @@ Before writing or editing code, execute the following steps:
    - Read [`docs/COMPONENT_SYSTEM.md`](docs/COMPONENT_SYSTEM.md) for UI primitive standards.
    - Read [`docs/HOOKS_GUIDE.md`](docs/HOOKS_GUIDE.md) for state & side-effect extraction.
 
-3. **Verify File Placement**:
-   - **Feature Logic**: Place all domain components, hooks, and types in `src/feature/<feature-name>/`.
+3. **Feature Documentation & AI Searchability Mandate (MANDATORY)**:
+   - ALL feature modules in `src/feature/<feature-name>/` MUST contain a `README.md` file.
+   - BEFORE modifying an existing feature, AI agents MUST read its `src/feature/<feature-name>/README.md` file for fast contextual searchability.
+   - When creating a NEW feature module, AI agents MUST create a `README.md` inside `src/feature/<feature-name>/README.md` documenting its components, hooks, services, and state flow.
+
+4. **Verify File Placement**:
+   - **Feature Logic**: Place all domain components, hooks, services, and types in `src/feature/<feature-name>/`.
    - **App Router Pages**: Keep `src/app/<route>/page.tsx` as thin wrappers that only render the main feature container `src/feature/<feature-name>/index.tsx`.
    - **Atomic UI Primitives**: Place reusable UI blocks in `src/components/ui/` using `cva`, `cn()`, and `@radix-ui/react-slot` (`asChild`).
 
-4. **Hook-Based Separation of Concerns (MANDATORY)**:
+5. **Hook-Based Separation of Concerns (MANDATORY)**:
    - NEVER place stateful logic, API calls, side-effects (`useEffect`), or heavy event handlers inside presentational JSX components.
    - ALWAYS extract business logic into custom hooks under `src/feature/<feature-name>/hooks/use-<feature-name>.ts`.
    - ALWAYS place domain & backend services under `src/feature/<feature-name>/services/<service-name>.ts`.
 
-5. **Service Unit Testing Mandate**:
+6. **Service Unit Testing Mandate**:
    - ALL business and data services in `services/` MUST have accompanying unit test files (`<service-name>.test.ts`).
    - Unit tests are executed via `bun test` and verified before every push.
 
-6. **Design System & Styling**:
+7. **Design System & Styling**:
    - ALWAYS use Tailwind CSS v4 semantic tokens (`bg-background`, `text-foreground`, `bg-primary`, `border-border`).
    - NEVER hardcode HEX colors, RGB values, or arbitrary pixel values in component classes.
    - ALWAYS combine class names using `cn()` from `@/utils/cn`.
 
-7. **Post-Coding & Pre-Push Verification**:
+8. **Strict Formatting & Writing Style Rule**:
+   - NEVER use the em dash "—" symbol anywhere in code, markdown, comments, or documentation as it looks AI-generated. Use standard hyphens "-", colons ":", or clean punctuation instead.
+
+9. **Post-Coding & Pre-Push Verification**:
    - After completing edits and ALWAYS before pushing to GitHub, run `bun run verify` (which runs `typecheck`, `check`, `lint`, and `test`) to guarantee zero errors, clean formatting, and passing unit tests.
    - A git pre-push hook (`.husky/pre-push`) is active to block pushes if `bun run verify` fails.
 
@@ -53,5 +61,5 @@ bun run build    # Build production bundle
 bun run typecheck# Verify TypeScript types
 bun run check    # Verify Prettier code formatting
 bun run format   # Auto-format codebase
-bun run verify   # Run full pre-push verification (typecheck + check + lint)
+bun run verify   # Run full pre-push verification (typecheck + check + lint + test)
 ```

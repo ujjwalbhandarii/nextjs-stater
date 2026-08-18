@@ -1,4 +1,4 @@
-# CLAUDE.md - AI Engineering Directives & Standards
+# CLAUDE.md: AI Engineering Directives & Standards
 
 > **🛑 MANDATORY BEFORE CODING PROTOCOL (ALL AI AGENTS MUST FOLLOW)**
 > Before generating, editing, or refactoring code in this repository, you MUST read and follow the principles defined in [`AGENTS.md`](AGENTS.md) and the system docs in `docs/`.
@@ -29,30 +29,26 @@ All commands MUST be executed using **Bun**. Never run `npm`, `yarn`, or `pnpm`.
 ### 2. Feature Layer (`src/feature/<feature-name>/`)
 
 - All business domain logic, view containers, presentational sub-components, and custom hooks MUST live inside `src/feature/<feature-name>/`.
+- **Feature README Mandate**: EVERY feature folder MUST contain a `README.md` file documenting its domain overview, components, hooks, services, and state flow. Read this `README.md` first when modifying a feature, and create one when building a new feature.
 - Standard Folder Layout for a feature:
   ```
   src/feature/<feature-name>/
   ├── components/          # Sub-components specific to this feature
   ├── hooks/               # Custom state & side-effect hooks
+  ├── services/            # Domain & backend business services
   ├── types/               # Feature-specific TypeScript types/interfaces
-  ├── utils/               # Feature-specific helper logic
+  ├── README.md            # Feature module documentation & AI index
   └── index.tsx            # Exported main feature component
   ```
 
-### 3. Component Layer (`src/components/ui/`)
+### 3. Service Unit Testing Mandate
 
-- Shared atomic UI building blocks (Buttons, Cards, Inputs, Dialogs, Tooltips, etc.) MUST reside in `src/components/ui/`.
-- Must follow the **shadcn/ui** primitive pattern using `class-variance-authority` (`cva`), `clsx`, `tailwind-merge`, and `@radix-ui/react-slot`.
-- Must include a `data-slot` attribute on the root element.
+- ALL business services in `services/` MUST have a corresponding `<service-name>.test.ts` file.
+- Unit tests are run via `bun test` and verified during `bun run verify`.
 
-### 4. Design Tokens & Styling (`src/styles/globals.css`)
+### 4. Writing Style Rule (No Em Dash)
 
-- Styling MUST utilize **Tailwind CSS v4** (`@import "tailwindcss";`).
-- Color variables are defined in **OKLCH** color space in `src/styles/globals.css`.
-- **Rule**: NEVER hardcode HEX colors, RGB values, or arbitrary pixel values in component classes. Always use semantic design tokens:
-  - Backgrounds: `bg-background`, `bg-card`, `bg-popover`, `bg-primary`, `bg-secondary`, `bg-muted`
-  - Foregrounds: `text-foreground`, `text-primary-foreground`, `text-muted-foreground`
-  - Borders/Rings: `border-border`, `ring-ring`
+- **STRICT RULE**: NEVER use the em dash "—" symbol anywhere in code, markdown, documentation, or comments as it looks AI-generated. Use standard hyphens "-", colons ":", or clean punctuation instead.
 
 ---
 
@@ -62,28 +58,6 @@ AI assistants must strictly maintain separation between **Presentation (JSX)** a
 
 - **Rule**: If a component requires state, effects, API calls, or complex event handlers, extract the logic into a custom hook in `src/feature/<feature-name>/hooks/use-<feature-name>.ts`.
 - Components should only call the hook, extract the props/handlers, and return clean, declarative JSX.
-
-### Example Hook Pattern:
-
-```tsx
-// src/feature/user-profile/hooks/use-user-profile.ts
-import { useState, useCallback } from 'react';
-
-export function useUserProfile(initialUserId: string) {
-  const [userId, setUserId] = useState(initialUserId);
-  const [isEditing, setIsEditing] = useState(false);
-
-  const toggleEdit = useCallback(() => {
-    setIsEditing((prev) => !prev);
-  }, []);
-
-  return {
-    userId,
-    isEditing,
-    toggleEdit,
-  };
-}
-```
 
 ---
 
@@ -152,6 +126,6 @@ Before submitting code changes, AI assistants MUST ensure:
 
 1. **Path Aliases**: All imports use `@/components`, `@/feature`, `@/styles`, or `@/utils`. No relative parent paths like `../../..`.
 2. **Type Safety**: TypeScript `strict` mode is active. Explicitly type all component props, function parameters, and hook return values. `any` is forbidden.
-3. **No Unused Imports/Variables**: Code must clean up unused variables or imports.
-4. **Validation**: Execute `bun run typecheck` to guarantee zero compilation errors.
-5. **Formatting**: Ensure files pass `bun run check`. Run `bun run format` if needed.
+3. **Feature README**: Ensure `README.md` exists inside `src/feature/<feature-name>/`.
+4. **No Em Dash**: Verify no em dash "—" symbols are present.
+5. **Validation**: Execute `bun run verify` to guarantee zero compilation, formatting, lint, or test errors.

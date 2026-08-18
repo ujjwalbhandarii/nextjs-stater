@@ -1,4 +1,4 @@
-# Vibe Ready — Production Next.js Starter Pack
+# Vibe Ready: Production Next.js Starter Pack
 
 <p align="left">
   <img src="https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" />
 </p>
 
-An enterprise-grade, Vibe Code ready Next.js 16 starter template engineered for rapid startup development and AI-assisted pair programming. Features strict **Feature-Based Architecture**, **Scalable Design Tokens**, **Component Architecture**, **Hook-Based State Management**, **Standardized API Routes**, and an automated **Git Pre-Push Hook**.
+An enterprise-grade, Vibe Code ready Next.js 16 starter template engineered for rapid startup development and AI-assisted pair programming. Features strict **Feature-Based Architecture**, **Feature README Indexing**, **Scalable Design Tokens**, **Component Architecture**, **Hook-Based State Management**, **Standardized API Routes**, and an automated **Git Pre-Push Hook**.
 
 ---
 
@@ -50,12 +50,12 @@ Before code is pushed to remote GitHub repositories, Git automatically runs `bun
 
 The template architecture is organized into modular documentation:
 
-- 📦 **[Architecture & Folder Structure](docs/ARCHITECTURE.md)** — Feature-based module organization (`src/feature/`) & App Router shell rules.
-- 🌐 **[API Routes & Backend Services](docs/API_ROUTES.md)** — Standards for Next.js App Router API handlers (`route.ts`), response formats, & validation.
-- 🎨 **[Design System](docs/DESIGN_SYSTEM.md)** — OKLCH color tokens, dark mode, & Tailwind CSS v4 setup.
-- 🧩 **[Component System](docs/COMPONENT_SYSTEM.md)** — Atomic UI primitives (`src/components/ui/`) built with Radix UI & CVA.
-- 🪝 **[Hook-Based Logic Separation](docs/HOOKS_GUIDE.md)** — Clean separation of JSX views and stateful custom hooks.
-- 🤖 **[AI Agent Pre-Coding Protocol (AGENTS.md)](AGENTS.md)** / **[CLAUDE.md](CLAUDE.md)** — Mandatory pre-coding directives for AI assistants.
+- 📦 **[Architecture & Folder Structure](docs/ARCHITECTURE.md)**: Feature-based module organization (`src/feature/`) & App Router shell rules.
+- 🌐 **[API Routes & Backend Services](docs/API_ROUTES.md)**: Standards for Next.js App Router API handlers (`route.ts`), response formats, & validation.
+- 🎨 **[Design System](docs/DESIGN_SYSTEM.md)**: OKLCH color tokens, dark mode, & Tailwind CSS v4 setup.
+- 🧩 **[Component System](docs/COMPONENT_SYSTEM.md)**: Atomic UI primitives (`src/components/ui/`) built with Radix UI & CVA.
+- 🪝 **[Hook-Based Logic Separation](docs/HOOKS_GUIDE.md)**: Clean separation of JSX views and stateful custom hooks.
+- 🤖 **[AI Agent Pre-Coding Protocol (AGENTS.md)](AGENTS.md)** / **[CLAUDE.md](CLAUDE.md)**: Mandatory pre-coding directives for AI assistants.
 
 ---
 
@@ -65,7 +65,7 @@ The template architecture is organized into modular documentation:
 src/
 ├── app/          # App Router page routes & API handlers (thin shells)
 │   └── api/      # Next.js App Router API controller routes
-├── feature/      # Business domain features (components, hooks, services, types)
+├── feature/      # Business domain features (components, hooks, services, README)
 ├── components/   # Atomic UI design system primitives
 ├── styles/       # OKLCH design tokens & Tailwind CSS v4 globals
 └── utils/        # Utility functions (cn) & shared types

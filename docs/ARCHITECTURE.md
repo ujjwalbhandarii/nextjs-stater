@@ -26,10 +26,15 @@ Each business domain lives inside `src/feature/<feature-name>/`:
 src/feature/<feature-name>/
 ├── components/          # Presentational components specific to this feature
 ├── hooks/               # State & logic custom hooks
+├── services/            # Domain & backend business services
 ├── types/               # Feature-specific TypeScript definitions
-├── utils/               # Feature-specific helper logic / services
+├── README.md            # Feature documentation & AI search index
 └── index.tsx            # Entry point view component for the feature
 ```
+
+### 🧠 Feature README & AI Searchability
+
+Every feature module MUST include a `README.md` file documenting its domain scope, components, hooks, services, and state flow. AI agents inspect this `README.md` first to index feature context quickly.
 
 ### Thin App Router Shell (`src/app/`)
 
