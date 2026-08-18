@@ -22,8 +22,8 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
 
   return (
     <section className='relative pt-20 pb-16 px-4 max-w-6xl mx-auto text-center'>
-      {/* Top SaaS Badge */}
-      <div className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#004c4c]/40 border border-[#006666]/60 text-[#b2d8d8] text-xs font-semibold tracking-wide uppercase mb-8 backdrop-blur-xl shadow-inner'>
+      {/* Top Liquid Glass Tag Pill */}
+      <div className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full liquid-glass-pill text-[#b2d8d8] text-xs font-semibold tracking-wide uppercase mb-8 shadow-md'>
         <Sparkles className='w-3.5 h-3.5 text-[#66b2b2] animate-pulse' />
         <span>Vibe Ready Production Starter</span>
       </div>
@@ -43,12 +43,12 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
         quality controls.
       </p>
 
-      {/* Tech Stack Pills */}
-      <div className='flex flex-wrap justify-center gap-2 mb-12 max-w-3xl mx-auto'>
+      {/* Tech Stack Liquid Glass Pills */}
+      <div className='flex flex-wrap justify-center gap-2.5 mb-12 max-w-3xl mx-auto'>
         {techBadges.map((badge) => (
           <span
             key={badge}
-            className='px-4 py-1.5 text-xs font-medium rounded-full bg-[#004c4c]/30 text-[#b2d8d8] border border-[#006666]/50 backdrop-blur-md transition-all hover:border-[#66b2b2] hover:text-white'
+            className='px-4 py-1.5 text-xs font-medium rounded-full liquid-glass-pill text-[#b2d8d8] transition-all hover:scale-105 hover:text-white'
           >
             {badge}
           </span>
@@ -60,7 +60,7 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
         <Button
           size='lg'
           onClick={() => onCopy(quickStartCmd)}
-          className='w-full sm:w-auto bg-[#008080] hover:bg-[#66b2b2] text-white font-semibold px-8 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-xl shadow-[#008080]/25 hover:shadow-[#008080]/40 hover:-translate-y-0.5 cursor-pointer text-sm'
+          className='w-full sm:w-auto bg-[#008080] hover:bg-[#66b2b2] text-white font-semibold px-8 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-xl shadow-[#008080]/30 hover:shadow-[#008080]/50 hover:-translate-y-0.5 cursor-pointer text-sm'
         >
           <Terminal className='w-4.5 h-4.5 text-[#b2d8d8]' />
           <span>
@@ -79,7 +79,7 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
           <Button
             variant='outline'
             size='lg'
-            className='w-full sm:w-auto border-[#006666]/70 bg-[#004c4c]/20 hover:bg-[#004c4c]/50 text-slate-200 hover:text-white font-semibold px-8 py-6 rounded-2xl flex items-center justify-center gap-2.5 transition-all hover:-translate-y-0.5 cursor-pointer text-sm'
+            className='w-full sm:w-auto liquid-glass-pill text-slate-200 hover:text-white font-semibold px-8 py-6 rounded-2xl flex items-center justify-center gap-2.5 transition-all hover:-translate-y-0.5 cursor-pointer text-sm'
           >
             <svg
               className='w-4.5 h-4.5 fill-current text-[#66b2b2]'
@@ -98,17 +98,17 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
         </a>
       </div>
 
-      {/* Sleek Hero Frame Container */}
-      <div className='relative rounded-3xl overflow-hidden border border-[#006666]/50 bg-[#004c4c]/20 backdrop-blur-2xl shadow-2xl shadow-[#004c4c]/30 group'>
+      {/* Liquid Glass Hero Frame Container */}
+      <div className='relative rounded-3xl overflow-hidden liquid-glass-card group p-2'>
         <Image
           src='/images/vibe_ready_banner.png'
           alt='Vibe Ready Banner'
           width={1024}
           height={393}
-          className='w-full h-auto object-cover opacity-95 transition-all duration-700 group-hover:opacity-100 group-hover:scale-101'
+          className='w-full h-auto object-cover rounded-2xl opacity-95 transition-all duration-700 group-hover:opacity-100 group-hover:scale-101'
           priority
         />
-        <div className='absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row items-center justify-between gap-2 px-5 py-3 rounded-2xl bg-[#060909]/85 backdrop-blur-2xl border border-[#006666]/60 text-xs text-slate-200'>
+        <div className='absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-center justify-between gap-2 px-5 py-3 rounded-2xl liquid-glass-pill text-xs text-slate-200'>
           <span className='flex items-center gap-2 font-medium'>
             <span className='w-2 h-2 rounded-full bg-[#66b2b2] animate-pulse' />
             <span>Vibe Ready Architecture & Ambient Coding Active</span>

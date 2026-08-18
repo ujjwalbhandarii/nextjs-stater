@@ -37,7 +37,7 @@ export function CommandSection({ onCopy, copiedCommand }: CommandSectionProps) {
   return (
     <section className='py-20 px-4 max-w-5xl mx-auto'>
       <div className='text-center mb-12'>
-        <div className='inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#004c4c]/40 border border-[#006666]/60 text-[#b2d8d8] text-xs font-mono mb-4'>
+        <div className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full liquid-glass-pill text-[#b2d8d8] text-xs font-mono mb-4'>
           <Terminal className='w-3.5 h-3.5 text-[#66b2b2]' />
           <span>BUN CLI COMMAND SUITE</span>
         </div>
@@ -56,10 +56,10 @@ export function CommandSection({ onCopy, copiedCommand }: CommandSectionProps) {
             <div
               key={item.cmd}
               onClick={() => onCopy(item.cmd)}
-              className='group flex flex-col sm:flex-row items-start sm:items-center justify-between p-5 rounded-2xl bg-[#004c4c]/15 border border-[#006666]/40 hover:border-[#66b2b2]/60 backdrop-blur-2xl transition-all duration-200 cursor-pointer hover:bg-[#004c4c]/30 gap-4 shadow-sm'
+              className='group flex flex-col sm:flex-row items-start sm:items-center justify-between p-5 rounded-2xl liquid-glass-card cursor-pointer gap-4'
             >
               <div className='flex items-center gap-3.5'>
-                <div className='p-2.5 rounded-xl bg-[#004c4c]/40 text-[#66b2b2] group-hover:text-white group-hover:bg-[#008080] transition-colors'>
+                <div className='p-2.5 rounded-xl liquid-glass-pill text-[#66b2b2] group-hover:text-white group-hover:bg-[#008080] transition-colors'>
                   <Play className='w-4 h-4' />
                 </div>
                 <div>
@@ -73,12 +73,12 @@ export function CommandSection({ onCopy, copiedCommand }: CommandSectionProps) {
               </div>
 
               <div className='flex items-center gap-2.5 w-full sm:w-auto justify-between sm:justify-end'>
-                <code className='px-3.5 py-2 rounded-xl bg-[#060909] text-[#b2d8d8] font-mono text-xs border border-[#006666]/50'>
+                <code className='px-3.5 py-2 rounded-xl bg-[#060909]/90 text-[#b2d8d8] font-mono text-xs border border-[#006666]/50'>
                   $ {item.cmd}
                 </code>
                 <button
                   type='button'
-                  className='p-2.5 rounded-xl bg-[#004c4c]/40 text-[#66b2b2] hover:text-white hover:bg-[#008080] transition-colors cursor-pointer'
+                  className='p-2.5 rounded-xl liquid-glass-pill text-[#66b2b2] hover:text-white hover:bg-[#008080] transition-colors cursor-pointer'
                   title='Copy command'
                 >
                   {isCopied ? (

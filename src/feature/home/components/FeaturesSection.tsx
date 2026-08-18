@@ -71,9 +71,9 @@ export function FeaturesSection() {
           return (
             <div
               key={item.title}
-              className='group p-7 rounded-3xl bg-[#004c4c]/15 border border-[#006666]/40 hover:border-[#66b2b2]/60 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#004c4c]/30 hover:shadow-xl hover:shadow-[#004c4c]/20'
+              className='group p-7 rounded-3xl liquid-glass-card'
             >
-              <div className='w-11 h-11 rounded-2xl bg-[#004c4c]/50 border border-[#006666]/60 p-2.5 text-[#b2d8d8] mb-6 flex items-center justify-center transition-all group-hover:bg-[#008080] group-hover:text-white shadow-md'>
+              <div className='w-11 h-11 rounded-2xl liquid-glass-pill p-2.5 text-[#b2d8d8] mb-6 flex items-center justify-center transition-all group-hover:bg-[#008080] group-hover:text-white shadow-md'>
                 <Icon className='w-5 h-5' />
               </div>
 

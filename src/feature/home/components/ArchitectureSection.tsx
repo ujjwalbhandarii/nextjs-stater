@@ -42,9 +42,9 @@ const folderStructure = [
 export function ArchitectureSection() {
   return (
     <section className='py-20 px-4 max-w-5xl mx-auto'>
-      <div className='p-9 rounded-3xl bg-[#004c4c]/15 border border-[#006666]/40 backdrop-blur-2xl shadow-xl'>
+      <div className='p-9 rounded-3xl liquid-glass-card shadow-2xl'>
         <div className='flex items-center gap-3.5 mb-8'>
-          <div className='p-3 rounded-2xl bg-[#004c4c]/40 text-[#b2d8d8] border border-[#006666]/60'>
+          <div className='p-3 rounded-2xl liquid-glass-pill text-[#b2d8d8]'>
             <FolderTree className='w-5 h-5 text-[#66b2b2]' />
           </div>
           <div>
@@ -70,7 +70,7 @@ export function ArchitectureSection() {
                     <FileCode className='w-3.5 h-3.5 text-[#66b2b2]' />
                     {item.path}
                   </span>
-                  <span className='text-[10px] px-2.5 py-0.5 rounded-full bg-[#004c4c]/40 text-[#b2d8d8] border border-[#006666]/50 font-medium'>
+                  <span className='text-[10px] px-2.5 py-0.5 rounded-full liquid-glass-pill text-[#b2d8d8] font-medium'>
                     {item.badge}
                   </span>
                 </div>
