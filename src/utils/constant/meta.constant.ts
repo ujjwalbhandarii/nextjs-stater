@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 const APP_URL =
   process.env.NEXT_PUBLIC_APP_URL || 'https://vibe-ready.vercel.app';
 const SITE_NAME = 'Vibe Ready Startup Template';
+const OG_IMAGE_PATH = '/images/vibe_ready_banner.png';
 
 const SEO_KEYWORDS = [
   // Primary Stack Keywords
@@ -62,21 +63,21 @@ const MAIN: Metadata = {
   publisher: 'Vibe Ready',
   category: 'Software Development',
 
-  // Open Graph Social Preview
+  // Open Graph Social Preview (Using README Banner Image)
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: APP_URL,
     siteName: SITE_NAME,
-    title: 'Vibe Ready - Enterprise Next.js 16 & Bun SaaS Startup Template',
+    title: 'Vibe Ready Next.js Starter Pack',
     description:
       'Production-ready Next.js 16 + Bun + Tailwind CSS v4 starter pack with feature-based encapsulation, custom hooks, unit testing, and automated Git verification.',
     images: [
       {
-        url: '/images/vibe_ready_banner.png',
-        width: 1200,
-        height: 630,
-        alt: 'Vibe Ready Starter Pack Preview',
+        url: OG_IMAGE_PATH,
+        width: 1024,
+        height: 393,
+        alt: 'Vibe Ready Next.js Starter Pack Banner',
       },
     ],
   },
@@ -87,7 +88,7 @@ const MAIN: Metadata = {
     title: 'Vibe Ready - Enterprise Next.js 16 & Bun SaaS Startup Template',
     description:
       'Production-ready Next.js 16 + Bun + Tailwind CSS v4 starter pack with feature-based encapsulation, custom hooks, unit testing, and automated Git verification.',
-    images: ['/images/vibe_ready_banner.png'],
+    images: [OG_IMAGE_PATH],
     creator: '@vibeready',
   },
 
@@ -104,10 +105,13 @@ const MAIN: Metadata = {
     },
   },
 
-  // Icons & Manifest
+  // Custom Website Branding Favicon Icons
   icons: {
-    icon: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: [
+      { url: '/images/favicon.png', type: 'image/png' },
+      { url: '/favicon.ico' },
+    ],
+    apple: '/images/favicon.png',
   },
 };
 
