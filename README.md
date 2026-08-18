@@ -24,8 +24,9 @@ bun dev          # Start local dev server on localhost:3000
 bun run build    # Build production bundle
 bun run typecheck# Verify TypeScript types
 bun run check    # Verify Prettier code formatting
+bun test         # Run service unit tests with Bun test runner
 bun run format   # Auto-format codebase
-bun run verify   # Run complete pre-push verification (typecheck + format + lint)
+bun run verify   # Run complete pre-push verification (typecheck + format + lint + test)
 ```
 
 ---
@@ -38,9 +39,10 @@ Before code is pushed to remote GitHub repositories, Git automatically runs `bun
 
 1. **TypeScript Compilation** (`tsc --noEmit`)
 2. **Prettier Formatting** (`prettier --check .`)
-3. **ESLint Static Analysis** (`next lint`)
+3. **ESLint Static Analysis** (`eslint src`)
+4. **Service Unit Tests** (`bun test`)
 
-> ⚠️ Pushes to GitHub will be blocked automatically if any type, formatting, or linting errors are detected.
+> ⚠️ Pushes to GitHub will be blocked automatically if any type, formatting, linting, or unit test errors are detected.
 
 ---
 

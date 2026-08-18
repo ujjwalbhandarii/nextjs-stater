@@ -25,17 +25,22 @@ Before writing or editing code, execute the following steps:
    - **App Router Pages**: Keep `src/app/<route>/page.tsx` as thin wrappers that only render the main feature container `src/feature/<feature-name>/index.tsx`.
    - **Atomic UI Primitives**: Place reusable UI blocks in `src/components/ui/` using `cva`, `cn()`, and `@radix-ui/react-slot` (`asChild`).
 
-4. **Hook-Based Separation of Concerns**:
-   - NEVER place stateful logic, API calls, side-effects, or heavy handlers inside presentational JSX components.
+4. **Hook-Based Separation of Concerns (MANDATORY)**:
+   - NEVER place stateful logic, API calls, side-effects (`useEffect`), or heavy event handlers inside presentational JSX components.
    - ALWAYS extract business logic into custom hooks under `src/feature/<feature-name>/hooks/use-<feature-name>.ts`.
+   - ALWAYS place domain & backend services under `src/feature/<feature-name>/services/<service-name>.ts`.
 
-5. **Design System & Styling**:
+5. **Service Unit Testing Mandate**:
+   - ALL business and data services in `services/` MUST have accompanying unit test files (`<service-name>.test.ts`).
+   - Unit tests are executed via `bun test` and verified before every push.
+
+6. **Design System & Styling**:
    - ALWAYS use Tailwind CSS v4 semantic tokens (`bg-background`, `text-foreground`, `bg-primary`, `border-border`).
    - NEVER hardcode HEX colors, RGB values, or arbitrary pixel values in component classes.
    - ALWAYS combine class names using `cn()` from `@/utils/cn`.
 
-6. **Post-Coding & Pre-Push Verification**:
-   - After completing edits and ALWAYS before pushing to GitHub, run `bun run verify` (which runs `typecheck`, `check`, and `lint`) to guarantee zero errors and clean formatting.
+7. **Post-Coding & Pre-Push Verification**:
+   - After completing edits and ALWAYS before pushing to GitHub, run `bun run verify` (which runs `typecheck`, `check`, `lint`, and `test`) to guarantee zero errors, clean formatting, and passing unit tests.
    - A git pre-push hook (`.husky/pre-push`) is active to block pushes if `bun run verify` fails.
 
 ---

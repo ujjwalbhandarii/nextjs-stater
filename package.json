@@ -10,7 +10,8 @@
     "format": "prettier --write .",
     "check": "prettier --check .",
     "typecheck": "tsc --noEmit",
-    "verify": "bun run typecheck && bun run check && bun run lint",
+    "test": "bun test",
+    "verify": "bun run typecheck && bun run check && bun run lint && bun test",
     "prepush": "bun run verify",
     "prepare": "husky"
   },
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.6",
     "@tailwindcss/postcss": "^4.3.3",
+    "@types/bun": "^1.3.14",
     "@types/node": "^26.2.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
