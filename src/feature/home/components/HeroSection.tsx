@@ -14,15 +14,13 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
   return (
     <section className='relative pt-12 sm:pt-20 pb-10 sm:pb-16 px-4 max-w-6xl mx-auto text-center'>
       {/* Mobile-Optimized SaaS Headline */}
-      <h1 className='text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] text-white mb-4 sm:mb-6 leading-[1.12]'>
+      <h1 className='mb-4 sm:mb-6'>
         The Production Next.js <br className='hidden sm:inline' />
-        <span className='bg-gradient-to-r from-white via-[#b2d8d8] to-[#66b2b2] bg-clip-text text-transparent'>
-          Startup Foundation
-        </span>
+        <span className='text-gradient-teal'>Startup Foundation</span>
       </h1>
 
       {/* Responsive Subtitle */}
-      <p className='max-w-2xl mx-auto text-sm sm:text-lg md:text-xl text-slate-300/90 mb-8 sm:mb-10 leading-relaxed font-normal px-2'>
+      <p className='max-w-2xl mx-auto text-body-hero mb-8 sm:mb-10 px-2'>
         Engineered with strict feature module boundaries, hook-based logic
         separation, mandatory service unit testing, and automated pre-push
         quality controls.
@@ -35,7 +33,7 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
           return (
             <span
               key={badge.label}
-              className='px-3.5 py-1.5 sm:px-5 sm:py-2.5 text-xs sm:text-base font-medium rounded-full liquid-glass-pill text-[#b2d8d8] flex items-center gap-2 sm:gap-2.5 transition-all hover:scale-105 hover:text-white shadow-sm'
+              className='px-3.5 py-1.5 sm:px-5 sm:py-2.5 rounded-full liquid-glass-pill flex items-center gap-2 sm:gap-2.5 transition-all hover:scale-105 hover:text-white shadow-sm text-mono-badge'
             >
               <Icon className='w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#66b2b2]' />
               <span>{badge.label}</span>
@@ -49,7 +47,7 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
         <Button
           size='lg'
           onClick={() => onCopy(quickStartCmd)}
-          className='w-full sm:w-auto bg-[#008080] hover:bg-[#66b2b2] text-white font-semibold px-6 sm:px-8 py-5 sm:py-6 rounded-2xl flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 shadow-xl shadow-[#008080]/30 hover:shadow-[#008080]/50 cursor-pointer text-xs sm:text-sm'
+          className='w-full sm:w-auto bg-[#008080] hover:bg-[#66b2b2] text-white px-6 sm:px-8 py-5 sm:py-6 rounded-2xl flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 shadow-xl shadow-[#008080]/30 hover:shadow-[#008080]/50 cursor-pointer'
         >
           <Terminal className='w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#b2d8d8]' />
           <span>
@@ -68,7 +66,7 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
           <Button
             variant='outline'
             size='lg'
-            className='w-full sm:w-auto liquid-glass-pill text-slate-200 hover:text-white font-semibold px-6 sm:px-8 py-5 sm:py-6 rounded-2xl flex items-center justify-center gap-2 sm:gap-2.5 transition-all cursor-pointer text-xs sm:text-sm'
+            className='w-full sm:w-auto liquid-glass-pill text-slate-200 hover:text-white px-6 sm:px-8 py-5 sm:py-6 rounded-2xl flex items-center justify-center gap-2 sm:gap-2.5 transition-all cursor-pointer'
           >
             <svg
               className='w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current text-[#66b2b2]'

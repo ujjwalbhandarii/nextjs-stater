@@ -10,14 +10,12 @@ export function CommandSection({ onCopy, copiedCommand }: CommandSectionProps) {
   return (
     <section className='py-12 sm:py-20 px-4 max-w-5xl mx-auto'>
       <div className='text-center mb-8 sm:mb-12'>
-        <div className='inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-glass-pill text-[#b2d8d8] text-xs font-mono mb-3.5'>
+        <div className='inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-glass-pill mb-3.5 text-mono-badge'>
           <Terminal className='w-3.5 h-3.5 text-[#66b2b2]' />
           <span>BUN CLI COMMAND SUITE</span>
         </div>
-        <h2 className='text-2xl sm:text-4xl font-bold tracking-tight text-white mb-2.5'>
-          Developer Command Suite
-        </h2>
-        <p className='text-slate-300/90 text-sm sm:text-base max-w-md mx-auto px-2'>
+        <h2 className='mb-2.5'>Developer Command Suite</h2>
+        <p className='max-w-md mx-auto px-2'>
           Click any command row to copy directly to your terminal clipboard.
         </p>
       </div>
@@ -36,17 +34,15 @@ export function CommandSection({ onCopy, copiedCommand }: CommandSectionProps) {
                   <Play className='w-3.5 h-3.5 sm:w-4 sm:h-4' />
                 </div>
                 <div>
-                  <h4 className='text-sm sm:text-base font-semibold text-white group-hover:text-[#b2d8d8] transition-colors'>
+                  <h4 className='group-hover:text-[#b2d8d8] transition-colors'>
                     {item.label}
                   </h4>
-                  <p className='text-xs sm:text-sm text-slate-300/90 leading-tight sm:leading-normal'>
-                    {item.desc}
-                  </p>
+                  <p>{item.desc}</p>
                 </div>
               </div>
 
               <div className='flex items-center gap-2.5 w-full sm:w-auto justify-between sm:justify-end pt-2 sm:pt-0 border-t border-[#006666]/20 sm:border-t-0'>
-                <code className='px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl bg-[#060909]/90 text-[#b2d8d8] font-mono text-[11px] sm:text-xs border border-[#006666]/50 shrink-0'>
+                <code className='px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl bg-[#060909]/90 border border-[#006666]/50 shrink-0'>
                   $ {item.cmd}
                 </code>
                 <button

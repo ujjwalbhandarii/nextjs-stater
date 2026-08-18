@@ -56,6 +56,10 @@ Before writing or editing code, execute the following steps:
     - After completing edits and ALWAYS before pushing to GitHub, run `bun run verify` (which runs `typecheck`, `check`, `lint`, and `test`) to guarantee zero errors, clean formatting, and passing unit tests.
     - A git pre-push hook (`.husky/pre-push`) is active to block pushes if `bun run verify` fails.
 
+11. **Mandatory Global Typography Rule**:
+    - NEVER add ad-hoc inline font-size, font-weight, or redundant text-color utility classes on standard text elements in JSX (e.g., avoid inline `text-3xl`, `font-bold`, `text-slate-300` on `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `code`).
+    - ALWAYS rely on semantic HTML tags (`<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`, `<p>`, `<code>`) governed by `src/styles/typography.css` for consistent site-wide typography.
+
 ---
 
 ## ⚡ CLI Command Reference

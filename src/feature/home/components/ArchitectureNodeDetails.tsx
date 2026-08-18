@@ -21,26 +21,20 @@ export function ArchitectureNodeDetails({
               <Icon className='w-5 h-5 text-[#66b2b2]' />
             </div>
             <div className='min-w-0'>
-              <h3 className='text-base sm:text-lg font-bold text-white truncate'>
-                {activeNode.title}
-              </h3>
-              <span className='font-mono text-xs text-[#b2d8d8] truncate block'>
-                {activeNode.name}
-              </span>
+              <h3 className='truncate'>{activeNode.title}</h3>
+              <code className='truncate block'>{activeNode.name}</code>
             </div>
           </div>
 
-          <span className='text-xs px-3 py-1 rounded-full bg-[#004c4c]/40 text-[#b2d8d8] border border-[#006666]/50 font-medium shrink-0'>
+          <span className='px-3 py-1 rounded-full bg-[#004c4c]/40 text-[#b2d8d8] border border-[#006666]/50 shrink-0 text-mono-badge'>
             {activeNode.badge}
           </span>
         </div>
 
         {/* Purpose & Boundary Description */}
         <div className='mb-6'>
-          <h4 className='text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2'>
-            Architectural Role
-          </h4>
-          <p className='text-slate-300 text-xs sm:text-sm leading-relaxed bg-[#060909]/75 p-4 rounded-xl border border-[#006666]/30'>
+          <h6 className='mb-2'>Architectural Role</h6>
+          <p className='bg-[#060909]/75 p-4 rounded-xl border border-[#006666]/30'>
             {activeNode.desc}
           </p>
         </div>
@@ -48,9 +42,7 @@ export function ArchitectureNodeDetails({
         {/* Child File Inspection (If Available) */}
         {activeNode.children && activeNode.children.length > 0 && (
           <div className='mb-6'>
-            <h4 className='text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3'>
-              Included Node Files
-            </h4>
+            <h6 className='mb-3'>Included Node Files</h6>
             <div className='space-y-2'>
               {activeNode.children.map((child) => (
                 <div
@@ -63,11 +55,11 @@ export function ArchitectureNodeDetails({
                     ) : (
                       <FileCode className='w-4 h-4 text-[#b2d8d8] shrink-0' />
                     )}
-                    <span className='font-mono text-xs font-medium text-white truncate'>
+                    <code className='truncate text-white font-medium'>
                       {child.name}
-                    </span>
+                    </code>
                   </div>
-                  <span className='text-[11px] text-slate-300/80 truncate shrink-0 max-w-[50%]'>
+                  <span className='text-caption-sm truncate shrink-0 max-w-[50%]'>
                     {child.desc}
                   </span>
                 </div>
@@ -80,7 +72,7 @@ export function ArchitectureNodeDetails({
       {/* AGENTS.md Protocol Verification Badge */}
       <div className='pt-4 border-t border-[#006666]/30 flex flex-wrap items-center justify-between text-xs gap-2 mt-4'>
         <span className='text-slate-400'>Quality Control Protocol</span>
-        <span className='text-[#b2d8d8] font-mono flex items-center gap-1.5 font-medium'>
+        <span className='text-[#b2d8d8] flex items-center gap-1.5 text-mono-badge'>
           <CheckCircle2 className='w-4 h-4 text-[#008080]' />
           <span>AGENTS.md & Bun Verified</span>
         </span>

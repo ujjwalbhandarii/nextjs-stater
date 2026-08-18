@@ -4,10 +4,8 @@ export function FeaturesSection() {
   return (
     <section className='py-12 sm:py-20 px-4 max-w-6xl mx-auto'>
       <div className='text-center mb-10 sm:mb-14'>
-        <h2 className='text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-3 sm:mb-4'>
-          Architectural Core Principles
-        </h2>
-        <p className='text-slate-300/90 max-w-xl mx-auto text-sm sm:text-lg font-normal px-2'>
+        <h2 className='mb-3 sm:mb-4'>Architectural Core Principles</h2>
+        <p className='text-body-md max-w-xl mx-auto px-2'>
           Designed with strict enterprise standards for modern AI agents and
           high-performance teams.
         </p>
@@ -25,17 +23,15 @@ export function FeaturesSection() {
                 <Icon className='w-4.5 h-4.5 sm:w-5 sm:h-5' />
               </div>
 
-              <h3 className='text-base sm:text-lg font-semibold text-white mb-2 group-hover:text-[#b2d8d8] transition-colors'>
+              <h3 className='mb-2 group-hover:text-[#b2d8d8] transition-colors'>
                 {item.title}
               </h3>
 
-              <span className='inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 mb-3 sm:mb-4 rounded-lg bg-[#060909]/80 text-[#b2d8d8] text-[11px] sm:text-xs font-mono border border-[#006666]/50 max-w-full truncate'>
-                {item.tag}
+              <span className='inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 mb-3 sm:mb-4 rounded-lg bg-[#060909]/80 text-[11px] sm:text-xs font-mono border border-[#006666]/50 max-w-full truncate'>
+                <code>{item.tag}</code>
               </span>
 
-              <p className='text-slate-300/90 text-xs sm:text-sm leading-relaxed'>
-                {item.description}
-              </p>
+              <p className='leading-relaxed'>{item.description}</p>
             </div>
           );
         })}
