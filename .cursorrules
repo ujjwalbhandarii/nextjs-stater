@@ -2,6 +2,7 @@
 
 - ALWAYS use Bun as the package manager (`bun dev`, `bun run build`, `bun run typecheck`, `bun run check`, `bun test`, `bun run format`). Never use npm/yarn.
 - FEATURE README MANDATE: Every feature folder MUST contain a `README.md` file in `src/feature/<feature-name>/README.md` for AI contextual searchability. Read it before editing, create one when adding a feature.
+- STATIC ASSET PLACEMENT MANDATE: All images and media MUST be organized into dedicated subdirectories under `public/` (e.g. `public/images/`, `public/icons/`). Do not place loose images directly at `public/` root.
 - NO EM DASH RULE: NEVER use the em dash "—" symbol in code, markdown, comments, or generated content. Use standard hyphens "-", colons ":", or clean punctuation.
 - MANDATORY LOGIC SEPARATION: Keep JSX presentational components clean of inline business logic, API calls, or side-effects. Extract state to custom hooks in `src/feature/<feature-name>/hooks/` and backend logic to `services/`.
 - MANDATORY SERVICE TESTING: Add `<service-name>.test.ts` for any service file created in `services/`.
