@@ -1,6 +1,17 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Terminal, ShieldCheck, ArrowRight } from 'lucide-react';
+import {
+  Terminal,
+  ShieldCheck,
+  ArrowRight,
+  Zap,
+  Atom,
+  Palette,
+  Flame,
+  Code2,
+  Boxes,
+  Container,
+} from 'lucide-react';
 
 interface HeroSectionProps {
   onCopy: (cmd: string) => void;
@@ -8,13 +19,13 @@ interface HeroSectionProps {
 }
 
 const techBadges = [
-  'Next.js 16',
-  'React 19',
-  'Tailwind CSS v4',
-  'Bun Runtime',
-  'TypeScript 5',
-  'Radix UI',
-  'Docker Ready',
+  { label: 'Next.js 16', icon: Zap },
+  { label: 'React 19', icon: Atom },
+  { label: 'Tailwind CSS v4', icon: Palette },
+  { label: 'Bun Runtime', icon: Flame },
+  { label: 'TypeScript 5', icon: Code2 },
+  { label: 'Radix UI', icon: Boxes },
+  { label: 'Docker Ready', icon: Container },
 ];
 
 export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
@@ -37,16 +48,20 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
         quality controls.
       </p>
 
-      {/* Prominent Tech Stack Liquid Glass Pills */}
+      {/* Prominent Tech Stack Liquid Glass Pills with Tool Icons */}
       <div className='flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto'>
-        {techBadges.map((badge) => (
-          <span
-            key={badge}
-            className='px-5 py-2 text-sm sm:text-base font-medium rounded-full liquid-glass-pill text-[#b2d8d8] transition-all hover:scale-105 hover:text-white shadow-sm'
-          >
-            {badge}
-          </span>
-        ))}
+        {techBadges.map((badge) => {
+          const Icon = badge.icon;
+          return (
+            <span
+              key={badge.label}
+              className='px-5 py-2.5 text-sm sm:text-base font-medium rounded-full liquid-glass-pill text-[#b2d8d8] flex items-center gap-2.5 transition-all hover:scale-105 hover:text-white shadow-sm'
+            >
+              <Icon className='w-4 h-4 text-[#66b2b2]' />
+              <span>{badge.label}</span>
+            </span>
+          );
+        })}
       </div>
 
       {/* Primary Action Buttons */}
