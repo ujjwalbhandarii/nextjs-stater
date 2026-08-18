@@ -21,11 +21,37 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    'name': 'Vibe Ready Startup Template',
+    'operatingSystem': 'Cross-platform',
+    'applicationCategory': 'DeveloperApplication',
+    'description':
+      'Enterprise-grade Next.js 16 & Bun starter pack built for modern AI pair-programming, lightning performance, and production scale.',
+    'offers': {
+      '@type': 'Offer',
+      'price': '0',
+      'priceCurrency': 'USD',
+    },
+    'author': {
+      '@type': 'Organization',
+      'name': 'Vibe Ready',
+      'url': 'https://github.com/ujjwalbhandarii/nextjs-stater',
+    },
+  };
+
   return (
     <html
       lang='en'
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
