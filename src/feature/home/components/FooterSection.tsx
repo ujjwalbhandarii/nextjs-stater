@@ -2,11 +2,11 @@ import { Heart, Sparkles } from 'lucide-react';
 
 export function FooterSection() {
   return (
-    <footer className='mt-20 py-8 border-t border-zinc-800/80 bg-zinc-950/80 backdrop-blur-md'>
-      <div className='max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400'>
+    <footer className='mt-20 py-8 border-t border-[#006666]/30 bg-[#070b0b]/80 backdrop-blur-xl'>
+      <div className='max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#66b2b2]'>
         <div className='flex items-center gap-2'>
-          <Sparkles className='w-4 h-4 text-purple-400' />
-          <span className='font-semibold text-zinc-200'>
+          <Sparkles className='w-4 h-4 text-[#008080]' />
+          <span className='font-medium text-[#b2d8d8]'>
             Vibe Ready Starter Pack
           </span>
           <span>&bull;</span>
@@ -15,7 +15,7 @@ export function FooterSection() {
 
         <div className='flex items-center gap-1'>
           <span>Crafted with</span>
-          <Heart className='w-3.5 h-3.5 text-pink-500 fill-pink-500' />
+          <Heart className='w-3.5 h-3.5 text-[#66b2b2] fill-[#66b2b2]' />
           <span>for rapid startup development</span>
         </div>
 
@@ -24,7 +24,7 @@ export function FooterSection() {
             href='https://github.com/ujjwalbhandarii/nextjs-stater'
             target='_blank'
             rel='noopener noreferrer'
-            className='hover:text-purple-300 transition-colors flex items-center gap-1.5 font-medium'
+            className='hover:text-[#b2d8d8] transition-colors flex items-center gap-1.5 font-medium'
           >
             <svg
               className='w-4 h-4 fill-current'

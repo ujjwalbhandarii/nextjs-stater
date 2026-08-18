@@ -8,79 +8,61 @@ interface HeroSectionProps {
 }
 
 const techBadges = [
-  { name: 'Next.js 16', color: 'bg-black text-white border-zinc-700' },
-  { name: 'React 19', color: 'bg-sky-950/60 text-sky-300 border-sky-800/50' },
-  {
-    name: 'Tailwind v4',
-    color: 'bg-cyan-950/60 text-cyan-300 border-cyan-800/50',
-  },
-  {
-    name: 'Bun Runtime',
-    color: 'bg-amber-950/60 text-amber-300 border-amber-800/50',
-  },
-  {
-    name: 'TypeScript 5',
-    color: 'bg-blue-950/60 text-blue-300 border-blue-800/50',
-  },
-  {
-    name: 'Radix UI',
-    color: 'bg-purple-950/60 text-purple-300 border-purple-800/50',
-  },
-  {
-    name: 'Docker Ready',
-    color: 'bg-indigo-950/60 text-indigo-300 border-indigo-800/50',
-  },
+  'Next.js 16',
+  'React 19',
+  'Tailwind CSS v4',
+  'Bun Runtime',
+  'TypeScript 5',
+  'Radix UI',
+  'Docker Ready',
 ];
 
 export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
   const quickStartCmd = 'bun run verify';
 
   return (
-    <section className='relative pt-12 pb-16 px-4 max-w-6xl mx-auto text-center'>
-      {/* Top Tag Pill */}
-      <div className='inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs sm:text-sm font-medium mb-8 backdrop-blur-md animate-pulse'>
-        <Sparkles className='w-4 h-4 text-purple-400' />
-        <span>Vibe Ready Startup Template for AI & Developers</span>
+    <section className='relative pt-16 pb-16 px-4 max-w-5xl mx-auto text-center'>
+      {/* Top Tag Pill - Apple Minimal Pill */}
+      <div className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#004c4c]/40 border border-[#006666]/50 text-[#b2d8d8] text-xs font-medium mb-8 backdrop-blur-xl'>
+        <Sparkles className='w-3.5 h-3.5 text-[#66b2b2]' />
+        <span>Vibe Ready Startup Pack</span>
       </div>
 
-      {/* Main Title */}
-      <h1 className='text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-300 bg-clip-text text-transparent leading-tight'>
-        Production Next.js 16 <br className='hidden sm:inline' />
-        <span className='bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent'>
-          Starter Pack
-        </span>
+      {/* Main Title - Clean Apple Typography */}
+      <h1 className='text-4xl sm:text-6xl font-semibold tracking-tight text-white mb-6 leading-[1.1]'>
+        Production Next.js <br />
+        <span className='text-[#b2d8d8]'>Starter Template</span>
       </h1>
 
       {/* Subtitle */}
-      <p className='max-w-2xl mx-auto text-base sm:text-lg text-zinc-400 mb-8 leading-relaxed'>
-        Engineered for rapid startup development with strict feature-based
-        module architecture, custom hook logic separation, mandatory service
-        unit testing, and pre-push quality control.
+      <p className='max-w-xl mx-auto text-base sm:text-lg text-[#66b2b2] mb-8 leading-relaxed font-normal'>
+        Engineered with strict feature module architecture, hook-based logic
+        separation, mandatory unit testing, and automated pre-push verification.
       </p>
 
-      {/* Technology Pills */}
-      <div className='flex flex-wrap justify-center gap-2 mb-10 max-w-3xl mx-auto'>
+      {/* Tech Badges */}
+      <div className='flex flex-wrap justify-center gap-2 mb-10 max-w-2xl mx-auto'>
         {techBadges.map((badge) => (
           <span
-            key={badge.name}
-            className={`px-3 py-1 text-xs font-semibold rounded-full border backdrop-blur-sm shadow-sm transition-all hover:scale-105 ${badge.color}`}
+            key={badge}
+            className='px-3.5 py-1 text-xs font-medium rounded-full bg-[#004c4c]/30 text-[#b2d8d8] border border-[#006666]/40 backdrop-blur-md transition-colors hover:border-[#66b2b2]/60'
           >
-            {badge.name}
+            {badge}
           </span>
         ))}
       </div>
 
-      {/* Primary Action Buttons */}
-      <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-12'>
+      {/* Action Buttons */}
+      <div className='flex flex-col sm:flex-row items-center justify-center gap-3 mb-14'>
         <Button
           size='lg'
           onClick={() => onCopy(quickStartCmd)}
-          className='w-full sm:w-auto bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-medium shadow-lg shadow-purple-900/30 px-6 py-6 rounded-xl flex items-center justify-center gap-3 transition-all hover:scale-102 cursor-pointer'
+          className='w-full sm:w-auto bg-[#008080] hover:bg-[#66b2b2] text-white font-medium px-6 py-6 rounded-2xl flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-[#004c4c]/30 cursor-pointer'
         >
-          <Terminal className='w-5 h-5 text-purple-200' />
+          <Terminal className='w-4 h-4 text-[#b2d8d8]' />
           <span>
             {copiedCommand === quickStartCmd
-              ? 'Copied to Clipboard! ✨'
+              ? 'Copied to Clipboard ✨'
               : '$ bun run verify'}
           </span>
         </Button>
@@ -94,10 +76,10 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
           <Button
             variant='outline'
             size='lg'
-            className='w-full sm:w-auto border-zinc-700 bg-zinc-900/60 hover:bg-zinc-800 text-zinc-200 font-medium px-6 py-6 rounded-xl flex items-center justify-center gap-2 transition-all hover:scale-102 cursor-pointer'
+            className='w-full sm:w-auto border-[#006666]/60 bg-[#004c4c]/20 hover:bg-[#004c4c]/40 text-[#b2d8d8] font-medium px-6 py-6 rounded-2xl flex items-center justify-center gap-2 transition-all cursor-pointer'
           >
             <svg
-              className='w-5 h-5 fill-current text-zinc-400'
+              className='w-4 h-4 fill-current text-[#66b2b2]'
               viewBox='0 0 24 24'
               aria-hidden='true'
             >
@@ -108,30 +90,29 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
               />
             </svg>
             <span>GitHub Repository</span>
-            <ArrowRight className='w-4 h-4 text-zinc-400' />
+            <ArrowRight className='w-4 h-4 text-[#66b2b2]' />
           </Button>
         </a>
       </div>
 
-      {/* Cute Lofi Banner Image */}
-      <div className='relative rounded-2xl overflow-hidden border border-purple-500/20 shadow-2xl shadow-purple-950/40 bg-zinc-900/80 group'>
-        <div className='absolute inset-0 bg-gradient-to-t from-[#0b0914] via-transparent to-transparent opacity-60 z-10 pointer-events-none' />
+      {/* Apple-Style Glass Banner Frame */}
+      <div className='relative rounded-3xl overflow-hidden border border-[#006666]/40 bg-[#004c4c]/20 backdrop-blur-2xl shadow-2xl group'>
         <Image
           src='/images/vibe_ready_banner.png'
-          alt='Lofi Vibe Coding Banner'
+          alt='Vibe Ready Banner'
           width={1024}
           height={393}
-          className='w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-102'
+          className='w-full h-auto object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100'
           priority
         />
-        <div className='absolute bottom-4 left-4 right-4 z-20 flex flex-col sm:flex-row items-center justify-between gap-2 px-4 py-2.5 rounded-xl bg-zinc-950/70 backdrop-blur-md border border-white/10 text-xs text-zinc-300'>
+        <div className='absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row items-center justify-between gap-2 px-4 py-2.5 rounded-2xl bg-[#070b0b]/80 backdrop-blur-xl border border-[#006666]/50 text-xs text-[#b2d8d8]'>
           <span className='flex items-center gap-2'>
-            <span className='w-2 h-2 rounded-full bg-emerald-400 animate-ping' />
-            <span>Vibe Ready & Ambient Coding Aesthetics Active</span>
+            <span className='w-2 h-2 rounded-full bg-[#66b2b2] animate-pulse' />
+            <span>Vibe Ready Architecture Active</span>
           </span>
-          <span className='text-zinc-400 font-mono flex items-center gap-1'>
-            <ShieldCheck className='w-3.5 h-3.5 text-purple-400' />
-            <span>Husky Pre-Push & Bun Verified</span>
+          <span className='text-[#66b2b2] font-mono flex items-center gap-1'>
+            <ShieldCheck className='w-3.5 h-3.5 text-[#008080]' />
+            <span>Husky & Bun Verified</span>
           </span>
         </div>
       </div>

@@ -11,13 +11,15 @@ export default function Homepage() {
   const { copiedCommand, handleCopyCommand } = useHome();
 
   return (
-    <main className='min-h-screen bg-[#0b0914] text-zinc-100 relative overflow-hidden vibe-bg-glow vibe-grid-pattern selection:bg-purple-500/30 selection:text-purple-200'>
-      {/* Background Ambient Glow Orbs */}
-      <div className='absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none' />
-      <div className='absolute top-2/3 right-10 w-[450px] h-[450px] bg-pink-600/10 rounded-full blur-[120px] pointer-events-none' />
-      <div className='absolute bottom-10 left-10 w-[450px] h-[450px] bg-cyan-600/10 rounded-full blur-[120px] pointer-events-none' />
+    <main className='min-h-screen bg-[#070b0b] text-[#b2d8d8] relative overflow-hidden vibe-bg-glow selection:bg-[#008080]/30 selection:text-white'>
+      {/* Noise Texture Background Layer */}
+      <div className='fixed inset-0 pointer-events-none z-0 opacity-30 mix-blend-overlay vibe-noise-overlay' />
 
-      {/* Main Page Layout */}
+      {/* Subtle Teal Ambient Glow */}
+      <div className='absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#008080]/10 rounded-full blur-[140px] pointer-events-none' />
+      <div className='absolute top-2/3 right-10 w-[450px] h-[450px] bg-[#004c4c]/20 rounded-full blur-[120px] pointer-events-none' />
+
+      {/* Main Content Layout */}
       <div className='relative z-10'>
         <HeroSection
           onCopy={handleCopyCommand}

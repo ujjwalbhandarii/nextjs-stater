@@ -1,26 +1,35 @@
 # 🎨 Scalable Design System
 
-The design system is powered by **Tailwind CSS v4** and **OKLCH** color tokens defined in `src/styles/globals.css`.
+The design system is powered by **Tailwind CSS v4** and OKLCH color tokens defined in `src/styles/globals.css`, following an **Apple-inspired minimalist dark aesthetic**.
 
 ---
 
-## 🎨 Color Palette & OKLCH Tokens
+## 🎨 Official Teal Palette
 
-Color variables are calibrated using the OKLCH space for predictable, vibrant color rendering:
+The application strictly adheres to the curated 5-color Teal design palette over a dark background:
 
-| Token          | Light Mode         | Dark Mode            | Usage                   |
-| :------------- | :----------------- | :------------------- | :---------------------- |
-| `--background` | `oklch(1 0 0)`     | `oklch(0.145 0 0)`   | Page background         |
-| `--foreground` | `oklch(0.145 0 0)` | `oklch(0.985 0 0)`   | Primary text color      |
-| `--card`       | `oklch(1 0 0)`     | `oklch(0.205 0 0)`   | Card containers         |
-| `--primary`    | `oklch(0.205 0 0)` | `oklch(0.922 0 0)`   | Primary actions/buttons |
-| `--border`     | `oklch(0.922 0 0)` | `oklch(1 0 0 / 10%)` | Component borders       |
+| Color Level      | Hex Code  | RGB             | Usage Purpose                                |
+| :--------------- | :-------- | :-------------- | :------------------------------------------- |
+| **Light Teal**   | `#b2d8d8` | `(178,216,216)` | Primary text, glowing highlights, code text  |
+| **Medium Teal**  | `#66b2b2` | `(102,178,178)` | Secondary body text, icons, subheadings      |
+| **Primary Teal** | `#008080` | `(0,128,128)`   | Primary action buttons, active indicators    |
+| **Deep Teal**    | `#006666` | `(0,102,102)`   | Borders, dividers, subtle button outlines    |
+| **Dark Teal**    | `#004c4c` | `(0,76,76)`     | Card containers, glassmorphism surface fills |
+
+---
+
+## 🍎 Apple-Inspired Component Guidelines
+
+1. **Ultra-Clean Surface Cards**:
+   - Use `rounded-3xl` (or `rounded-2xl`), `bg-[#004c4c]/20`, `border border-[#006666]/30`, and `backdrop-blur-xl`.
+2. **Minimalist Typography**:
+   - Use tight letter spacing (`tracking-tight`), crisp font weights (`font-semibold` for headings), and clean color hierarchy (`#b2d8d8` for titles, `#66b2b2` for body text).
+3. **Subtle Background & Noise Texture**:
+   - Dark background (`#070b0b`) overlaid with repeating noise texture (`/images/noise.png`) and soft ambient teal glows.
 
 ---
 
 ## ⚙️ Tailwind v4 Integration
-
-The design system imports Tailwind CSS v4 in `src/styles/globals.css`:
 
 ```css
 @import 'tailwindcss';
@@ -31,6 +40,5 @@ The design system imports Tailwind CSS v4 in `src/styles/globals.css`:
 
 ### Styling Rules
 
-- Always use semantic utility classes (`bg-background`, `text-foreground`, `bg-primary`, `border-border`).
+- ALWAYS stick to the official 5-color Teal palette.
 - Combine classes using `cn()` from `@/utils/cn`.
-- Do NOT hardcode raw hex values or arbitrary pixel numbers in components.
