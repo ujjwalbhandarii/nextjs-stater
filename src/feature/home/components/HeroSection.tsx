@@ -31,32 +31,32 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
   const quickStartCmd = 'bun run verify';
 
   return (
-    <section className='relative pt-20 pb-16 px-4 max-w-6xl mx-auto text-center'>
-      {/* Million-Dollar SaaS Headline */}
-      <h1 className='text-5xl sm:text-7xl font-extrabold tracking-[-0.03em] text-white mb-6 leading-[1.08]'>
-        The Production Next.js <br />
+    <section className='relative pt-12 sm:pt-20 pb-10 sm:pb-16 px-4 max-w-6xl mx-auto text-center'>
+      {/* Mobile-Optimized SaaS Headline */}
+      <h1 className='text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] text-white mb-4 sm:mb-6 leading-[1.12]'>
+        The Production Next.js <br className='hidden sm:inline' />
         <span className='bg-gradient-to-r from-white via-[#b2d8d8] to-[#66b2b2] bg-clip-text text-transparent'>
           Startup Foundation
         </span>
       </h1>
 
-      {/* High-Contrast Subtitle */}
-      <p className='max-w-2xl mx-auto text-base sm:text-xl text-slate-300/90 mb-10 leading-relaxed font-normal'>
+      {/* Responsive Subtitle */}
+      <p className='max-w-2xl mx-auto text-sm sm:text-lg md:text-xl text-slate-300/90 mb-8 sm:mb-10 leading-relaxed font-normal px-2'>
         Engineered with strict feature module boundaries, hook-based logic
         separation, mandatory service unit testing, and automated pre-push
         quality controls.
       </p>
 
-      {/* Prominent Tech Stack Liquid Glass Pills with Tool Icons */}
-      <div className='flex flex-wrap justify-center gap-3 mb-12 max-w-4xl mx-auto'>
+      {/* Prominent Tech Stack Liquid Glass Pills */}
+      <div className='flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 max-w-4xl mx-auto'>
         {techBadges.map((badge) => {
           const Icon = badge.icon;
           return (
             <span
               key={badge.label}
-              className='px-5 py-2.5 text-sm sm:text-base font-medium rounded-full liquid-glass-pill text-[#b2d8d8] flex items-center gap-2.5 transition-all hover:scale-105 hover:text-white shadow-sm'
+              className='px-3.5 py-1.5 sm:px-5 sm:py-2.5 text-xs sm:text-base font-medium rounded-full liquid-glass-pill text-[#b2d8d8] flex items-center gap-2 sm:gap-2.5 transition-all hover:scale-105 hover:text-white shadow-sm'
             >
-              <Icon className='w-4 h-4 text-[#66b2b2]' />
+              <Icon className='w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#66b2b2]' />
               <span>{badge.label}</span>
             </span>
           );
@@ -64,13 +64,13 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
       </div>
 
       {/* Primary Action Buttons */}
-      <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-16'>
+      <div className='flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 mb-12 sm:mb-16 w-full max-w-md sm:max-w-none mx-auto'>
         <Button
           size='lg'
           onClick={() => onCopy(quickStartCmd)}
-          className='w-full sm:w-auto bg-[#008080] hover:bg-[#66b2b2] text-white font-semibold px-8 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-xl shadow-[#008080]/30 hover:shadow-[#008080]/50 hover:-translate-y-0.5 cursor-pointer text-sm'
+          className='w-full sm:w-auto bg-[#008080] hover:bg-[#66b2b2] text-white font-semibold px-6 sm:px-8 py-5 sm:py-6 rounded-2xl flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 shadow-xl shadow-[#008080]/30 hover:shadow-[#008080]/50 cursor-pointer text-xs sm:text-sm'
         >
-          <Terminal className='w-4.5 h-4.5 text-[#b2d8d8]' />
+          <Terminal className='w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#b2d8d8]' />
           <span>
             {copiedCommand === quickStartCmd
               ? 'Copied to Clipboard! ✨'
@@ -87,10 +87,10 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
           <Button
             variant='outline'
             size='lg'
-            className='w-full sm:w-auto liquid-glass-pill text-slate-200 hover:text-white font-semibold px-8 py-6 rounded-2xl flex items-center justify-center gap-2.5 transition-all hover:-translate-y-0.5 cursor-pointer text-sm'
+            className='w-full sm:w-auto liquid-glass-pill text-slate-200 hover:text-white font-semibold px-6 sm:px-8 py-5 sm:py-6 rounded-2xl flex items-center justify-center gap-2 sm:gap-2.5 transition-all cursor-pointer text-xs sm:text-sm'
           >
             <svg
-              className='w-4.5 h-4.5 fill-current text-[#66b2b2]'
+              className='w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current text-[#66b2b2]'
               viewBox='0 0 24 24'
               aria-hidden='true'
             >
@@ -101,19 +101,19 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
               />
             </svg>
             <span>GitHub Repository</span>
-            <ArrowRight className='w-4 h-4 text-[#66b2b2]' />
+            <ArrowRight className='w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#66b2b2]' />
           </Button>
         </a>
       </div>
 
       {/* Liquid Glass Hero Frame Container */}
-      <div className='relative rounded-3xl overflow-hidden liquid-glass-card group p-2'>
+      <div className='relative rounded-2xl sm:rounded-3xl overflow-hidden liquid-glass-card group p-1.5 sm:p-2'>
         <Image
           src='/images/vibe_ready_banner.png'
           alt='Vibe Ready Banner'
           width={1024}
           height={393}
-          className='w-full h-auto object-cover rounded-2xl opacity-95 transition-all duration-700 group-hover:opacity-100 group-hover:scale-101'
+          className='w-full h-auto object-cover rounded-xl sm:rounded-2xl opacity-95 transition-all duration-700 group-hover:opacity-100 group-hover:scale-101'
           priority
         />
       </div>

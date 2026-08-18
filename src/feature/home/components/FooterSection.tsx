@@ -2,15 +2,15 @@ import { Heart, Sparkles } from 'lucide-react';
 
 export function FooterSection() {
   return (
-    <footer className='mt-24 py-10 border-t border-[#006666]/40 bg-[#060909]/80 backdrop-blur-2xl'>
-      <div className='max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-300/90'>
-        <div className='flex items-center gap-2'>
+    <footer className='mt-16 sm:mt-24 py-8 sm:py-10 border-t border-[#006666]/40 bg-[#060909]/80 backdrop-blur-2xl'>
+      <div className='max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs sm:text-sm text-slate-300/90'>
+        <div className='flex flex-wrap items-center justify-center sm:justify-start gap-2'>
           <Sparkles className='w-4 h-4 text-[#008080]' />
           <span className='font-semibold text-white'>
             Vibe Ready Starter Pack
           </span>
-          <span>&bull;</span>
-          <span className='text-slate-400'>
+          <span className='hidden sm:inline'>&bull;</span>
+          <span className='text-slate-400 w-full sm:w-auto'>
             Next.js 16 + Bun + Tailwind CSS v4
           </span>
         </div>
