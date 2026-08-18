@@ -36,7 +36,7 @@ Before writing or editing code, execute the following steps:
 
 6. **Post-Coding & Pre-Push Verification**:
    - After completing edits and ALWAYS before pushing to GitHub, run `bun run verify` (which runs `typecheck`, `check`, and `lint`) to guarantee zero errors and clean formatting.
-   - A git pre-push hook (`.git/hooks/pre-push`) is active to block pushes if `bun run verify` fails.
+   - A git pre-push hook (`.husky/pre-push`) is active to block pushes if `bun run verify` fails.
 
 ---
 

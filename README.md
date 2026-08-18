@@ -32,7 +32,7 @@ bun run verify   # Run complete pre-push verification (typecheck + format + lint
 
 ## 🛡️ Git Pre-Push Verification
 
-This template includes a built-in **Git Pre-Push Hook** (`.git/hooks/pre-push`).
+This template includes a built-in **Git Pre-Push Hook** configured via **Husky** (`.husky/pre-push`).
 
 Before code is pushed to remote GitHub repositories, Git automatically runs `bun run verify` to check:
 
