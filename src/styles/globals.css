@@ -2,12 +2,16 @@
 @import 'tw-animate-css';
 
 /* 
-  Teal Apple-Inspired Color Palette:
-  #b2d8d8 -> Light Teal
-  #66b2b2 -> Medium Teal
-  #008080 -> Primary Teal
-  #006666 -> Deep Teal
-  #004c4c -> Dark Teal
+  Million-Dollar SaaS Design System:
+  - Font: Geist / Inter with precise tracking & crisp antialiasing
+  - Primary Headlines: Pure Crisp White (#ffffff / #f8fafc)
+  - Secondary Text: High-contrast Slate Silver (#cbd5e1 / #94a3b8)
+  - Curated Teal Accent Palette:
+      #b2d8d8 -> Light Teal (Badges, glowing text highlights, code)
+      #66b2b2 -> Medium Teal (Accent icons, borders, active states)
+      #008080 -> Primary Teal (CTA buttons, glowing borders)
+      #006666 -> Deep Teal (Subtle card borders & glass outlines)
+      #004c4c -> Dark Teal (Glassmorphism container fills)
 */
 
 :root {
@@ -33,23 +37,23 @@
 }
 
 .dark {
-  --background: #070b0b;
-  --foreground: #b2d8d8;
-  --card: rgba(0, 76, 76, 0.25);
-  --card-foreground: #b2d8d8;
-  --popover: #0a0f0f;
-  --popover-foreground: #b2d8d8;
+  --background: #060909;
+  --foreground: #f8fafc;
+  --card: rgba(0, 76, 76, 0.2);
+  --card-foreground: #f8fafc;
+  --popover: #060909;
+  --popover-foreground: #f8fafc;
   --primary: #008080;
   --primary-foreground: #ffffff;
   --secondary: #004c4c;
-  --secondary-foreground: #b2d8d8;
-  --muted: rgba(0, 102, 102, 0.3);
-  --muted-foreground: #66b2b2;
+  --secondary-foreground: #cbd5e1;
+  --muted: rgba(0, 102, 102, 0.25);
+  --muted-foreground: #94a3b8;
   --accent: #66b2b2;
-  --accent-foreground: #070b0b;
+  --accent-foreground: #060909;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: rgba(0, 102, 102, 0.4);
-  --input: rgba(0, 102, 102, 0.5);
+  --border: rgba(0, 102, 102, 0.35);
+  --input: rgba(0, 102, 102, 0.45);
   --ring: #008080;
 }
 
@@ -58,8 +62,11 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans:
+    var(--font-geist-sans), Inter, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  --font-mono:
+    var(--font-geist-mono), 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -81,7 +88,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Palette Utilities */
+  /* Palette Tokens */
   --color-teal-light: #b2d8d8;
   --color-teal-medium: #66b2b2;
   --color-teal-primary: #008080;
@@ -95,19 +102,24 @@
   }
 
   body {
-    @apply bg-[#070b0b] text-[#b2d8d8] dark:bg-[#070b0b] dark:text-[#b2d8d8] antialiased font-sans tracking-tight;
+    @apply bg-[#060909] text-[#f8fafc] dark:bg-[#060909] dark:text-[#f8fafc] font-sans tracking-tight antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 }
 
-/* Subtle Ambient Glow and Noise Overlay */
+/* Ambient Glow & Noise Texture */
 .vibe-bg-glow {
   background:
     radial-gradient(
-      circle at 50% 10%,
-      rgba(0, 128, 128, 0.15) 0%,
-      transparent 55%
+      circle at 50% 5%,
+      rgba(0, 128, 128, 0.18) 0%,
+      transparent 50%
     ),
-    radial-gradient(circle at 80% 60%, rgba(0, 76, 76, 0.2) 0%, transparent 50%);
+    radial-gradient(
+      circle at 85% 55%,
+      rgba(0, 76, 76, 0.22) 0%,
+      transparent 45%
+    );
 }
 
 .vibe-noise-overlay {

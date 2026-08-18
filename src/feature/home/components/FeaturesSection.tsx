@@ -54,37 +54,38 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className='py-16 px-4 max-w-5xl mx-auto'>
-      <div className='text-center mb-12'>
-        <h2 className='text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-3'>
-          Architecture & Design System
+    <section className='py-20 px-4 max-w-6xl mx-auto'>
+      <div className='text-center mb-14'>
+        <h2 className='text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4'>
+          Architectural Core Principles
         </h2>
-        <p className='text-[#66b2b2] max-w-lg mx-auto text-sm sm:text-base font-normal'>
-          Designed with Apple-like simplicity and enterprise modular standards.
+        <p className='text-slate-300/90 max-w-xl mx-auto text-base sm:text-lg font-normal'>
+          Designed with strict enterprise standards for modern AI agents and
+          high-performance teams.
         </p>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
         {features.map((item) => {
           const Icon = item.icon;
           return (
             <div
               key={item.title}
-              className='group p-6 rounded-3xl bg-[#004c4c]/20 border border-[#006666]/30 hover:border-[#66b2b2]/40 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1'
+              className='group p-7 rounded-3xl bg-[#004c4c]/15 border border-[#006666]/40 hover:border-[#66b2b2]/60 backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#004c4c]/30 hover:shadow-xl hover:shadow-[#004c4c]/20'
             >
-              <div className='w-10 h-10 rounded-2xl bg-[#004c4c]/50 border border-[#006666]/60 p-2 text-[#b2d8d8] mb-5 flex items-center justify-center transition-colors group-hover:bg-[#008080]/40 group-hover:text-white'>
+              <div className='w-11 h-11 rounded-2xl bg-[#004c4c]/50 border border-[#006666]/60 p-2.5 text-[#b2d8d8] mb-6 flex items-center justify-center transition-all group-hover:bg-[#008080] group-hover:text-white shadow-md'>
                 <Icon className='w-5 h-5' />
               </div>
 
-              <h3 className='text-base font-semibold text-white mb-2 group-hover:text-[#b2d8d8] transition-colors'>
+              <h3 className='text-lg font-semibold text-white mb-2.5 group-hover:text-[#b2d8d8] transition-colors'>
                 {item.title}
               </h3>
 
-              <span className='inline-block px-2.5 py-0.5 mb-3 rounded-md bg-[#070b0b] text-[#66b2b2] text-xs font-mono border border-[#006666]/40'>
+              <span className='inline-block px-3 py-1 mb-4 rounded-lg bg-[#060909]/80 text-[#b2d8d8] text-xs font-mono border border-[#006666]/50'>
                 {item.tag}
               </span>
 
-              <p className='text-[#66b2b2] text-xs sm:text-sm leading-relaxed'>
+              <p className='text-slate-300/90 text-sm leading-relaxed'>
                 {item.description}
               </p>
             </div>

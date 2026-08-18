@@ -21,48 +21,51 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
   const quickStartCmd = 'bun run verify';
 
   return (
-    <section className='relative pt-16 pb-16 px-4 max-w-5xl mx-auto text-center'>
-      {/* Top Tag Pill - Apple Minimal Pill */}
-      <div className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#004c4c]/40 border border-[#006666]/50 text-[#b2d8d8] text-xs font-medium mb-8 backdrop-blur-xl'>
-        <Sparkles className='w-3.5 h-3.5 text-[#66b2b2]' />
-        <span>Vibe Ready Startup Pack</span>
+    <section className='relative pt-20 pb-16 px-4 max-w-6xl mx-auto text-center'>
+      {/* Top SaaS Badge */}
+      <div className='inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#004c4c]/40 border border-[#006666]/60 text-[#b2d8d8] text-xs font-semibold tracking-wide uppercase mb-8 backdrop-blur-xl shadow-inner'>
+        <Sparkles className='w-3.5 h-3.5 text-[#66b2b2] animate-pulse' />
+        <span>Vibe Ready Production Starter</span>
       </div>
 
-      {/* Main Title - Clean Apple Typography */}
-      <h1 className='text-4xl sm:text-6xl font-semibold tracking-tight text-white mb-6 leading-[1.1]'>
-        Production Next.js <br />
-        <span className='text-[#b2d8d8]'>Starter Template</span>
+      {/* Million-Dollar SaaS Headline */}
+      <h1 className='text-5xl sm:text-7xl font-extrabold tracking-[-0.03em] text-white mb-6 leading-[1.08]'>
+        The Production Next.js <br />
+        <span className='bg-gradient-to-r from-white via-[#b2d8d8] to-[#66b2b2] bg-clip-text text-transparent'>
+          Startup Foundation
+        </span>
       </h1>
 
-      {/* Subtitle */}
-      <p className='max-w-xl mx-auto text-base sm:text-lg text-[#66b2b2] mb-8 leading-relaxed font-normal'>
-        Engineered with strict feature module architecture, hook-based logic
-        separation, mandatory unit testing, and automated pre-push verification.
+      {/* High-Contrast Subtitle */}
+      <p className='max-w-2xl mx-auto text-base sm:text-xl text-slate-300/90 mb-10 leading-relaxed font-normal'>
+        Engineered with strict feature module boundaries, hook-based logic
+        separation, mandatory service unit testing, and automated pre-push
+        quality controls.
       </p>
 
-      {/* Tech Badges */}
-      <div className='flex flex-wrap justify-center gap-2 mb-10 max-w-2xl mx-auto'>
+      {/* Tech Stack Pills */}
+      <div className='flex flex-wrap justify-center gap-2 mb-12 max-w-3xl mx-auto'>
         {techBadges.map((badge) => (
           <span
             key={badge}
-            className='px-3.5 py-1 text-xs font-medium rounded-full bg-[#004c4c]/30 text-[#b2d8d8] border border-[#006666]/40 backdrop-blur-md transition-colors hover:border-[#66b2b2]/60'
+            className='px-4 py-1.5 text-xs font-medium rounded-full bg-[#004c4c]/30 text-[#b2d8d8] border border-[#006666]/50 backdrop-blur-md transition-all hover:border-[#66b2b2] hover:text-white'
           >
             {badge}
           </span>
         ))}
       </div>
 
-      {/* Action Buttons */}
-      <div className='flex flex-col sm:flex-row items-center justify-center gap-3 mb-14'>
+      {/* Primary Action Buttons */}
+      <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-16'>
         <Button
           size='lg'
           onClick={() => onCopy(quickStartCmd)}
-          className='w-full sm:w-auto bg-[#008080] hover:bg-[#66b2b2] text-white font-medium px-6 py-6 rounded-2xl flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-[#004c4c]/30 cursor-pointer'
+          className='w-full sm:w-auto bg-[#008080] hover:bg-[#66b2b2] text-white font-semibold px-8 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-xl shadow-[#008080]/25 hover:shadow-[#008080]/40 hover:-translate-y-0.5 cursor-pointer text-sm'
         >
-          <Terminal className='w-4 h-4 text-[#b2d8d8]' />
+          <Terminal className='w-4.5 h-4.5 text-[#b2d8d8]' />
           <span>
             {copiedCommand === quickStartCmd
-              ? 'Copied to Clipboard ✨'
+              ? 'Copied to Clipboard! ✨'
               : '$ bun run verify'}
           </span>
         </Button>
@@ -76,10 +79,10 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
           <Button
             variant='outline'
             size='lg'
-            className='w-full sm:w-auto border-[#006666]/60 bg-[#004c4c]/20 hover:bg-[#004c4c]/40 text-[#b2d8d8] font-medium px-6 py-6 rounded-2xl flex items-center justify-center gap-2 transition-all cursor-pointer'
+            className='w-full sm:w-auto border-[#006666]/70 bg-[#004c4c]/20 hover:bg-[#004c4c]/50 text-slate-200 hover:text-white font-semibold px-8 py-6 rounded-2xl flex items-center justify-center gap-2.5 transition-all hover:-translate-y-0.5 cursor-pointer text-sm'
           >
             <svg
-              className='w-4 h-4 fill-current text-[#66b2b2]'
+              className='w-4.5 h-4.5 fill-current text-[#66b2b2]'
               viewBox='0 0 24 24'
               aria-hidden='true'
             >
@@ -95,24 +98,24 @@ export function HeroSection({ onCopy, copiedCommand }: HeroSectionProps) {
         </a>
       </div>
 
-      {/* Apple-Style Glass Banner Frame */}
-      <div className='relative rounded-3xl overflow-hidden border border-[#006666]/40 bg-[#004c4c]/20 backdrop-blur-2xl shadow-2xl group'>
+      {/* Sleek Hero Frame Container */}
+      <div className='relative rounded-3xl overflow-hidden border border-[#006666]/50 bg-[#004c4c]/20 backdrop-blur-2xl shadow-2xl shadow-[#004c4c]/30 group'>
         <Image
           src='/images/vibe_ready_banner.png'
           alt='Vibe Ready Banner'
           width={1024}
           height={393}
-          className='w-full h-auto object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100'
+          className='w-full h-auto object-cover opacity-95 transition-all duration-700 group-hover:opacity-100 group-hover:scale-101'
           priority
         />
-        <div className='absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row items-center justify-between gap-2 px-4 py-2.5 rounded-2xl bg-[#070b0b]/80 backdrop-blur-xl border border-[#006666]/50 text-xs text-[#b2d8d8]'>
-          <span className='flex items-center gap-2'>
+        <div className='absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row items-center justify-between gap-2 px-5 py-3 rounded-2xl bg-[#060909]/85 backdrop-blur-2xl border border-[#006666]/60 text-xs text-slate-200'>
+          <span className='flex items-center gap-2 font-medium'>
             <span className='w-2 h-2 rounded-full bg-[#66b2b2] animate-pulse' />
-            <span>Vibe Ready Architecture Active</span>
+            <span>Vibe Ready Architecture & Ambient Coding Active</span>
           </span>
-          <span className='text-[#66b2b2] font-mono flex items-center gap-1'>
-            <ShieldCheck className='w-3.5 h-3.5 text-[#008080]' />
-            <span>Husky & Bun Verified</span>
+          <span className='text-[#b2d8d8] font-mono flex items-center gap-1.5 font-medium'>
+            <ShieldCheck className='w-4 h-4 text-[#008080]' />
+            <span>Husky Pre-Push & Bun Verified</span>
           </span>
         </div>
       </div>
