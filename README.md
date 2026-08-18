@@ -11,6 +11,10 @@
   <img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" />
 </p>
 
+<p align="center">
+  <img src="public/vibe_ready_banner.png" alt="Vibe Ready Next.js Starter Pack Banner" width="100%" style="border-radius: 12px;" />
+</p>
+
 An enterprise-grade, Vibe Code ready Next.js 16 starter template engineered for rapid startup development and AI-assisted pair programming. Features strict **Feature-Based Architecture**, **Feature README Indexing**, **Scalable Design Tokens**, **Component Architecture**, **Hook-Based State Management**, **Standardized API Routes**, and an automated **Git Pre-Push Hook**.
 
 ---
