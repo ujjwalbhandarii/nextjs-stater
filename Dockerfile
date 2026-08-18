@@ -15,6 +15,7 @@ COPY . .
 # Set production environment for build time optimization
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV BUILD_STANDALONE=true
 
 RUN bun run build
 
